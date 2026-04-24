@@ -79,7 +79,7 @@ export default function Home() {
           marginBottom: '0.75rem',
           marginTop: 0,
         }}>
-          LJUSLAB
+          Floviken
         </h1>
 
         {/* Tagline */}
@@ -246,10 +246,10 @@ export default function Home() {
           marginBottom: '2rem',
         }}>
           <a
-            href="mailto:richard@ljuslab.se"
+            href="mailto:richard@Floviken.se"
             style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}
           >
-            richard@ljuslab.se
+            richard@Floviken.se
           </a>
           <span style={{ margin: '0 0.75rem', color: '#c8c2b5' }}>·</span>
           <a
