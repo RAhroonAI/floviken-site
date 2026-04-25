@@ -108,12 +108,13 @@ export default function Home() {
           marginRight: 'auto',
         }}>
           <p style={{ margin: 0 }}>
-            I'm Richard Ahroon — a hospitalist and biomedical
-            engineer based in Karlstad, Sweden, working part-time
-            in the US. I build small AI tools for clinical
-            problems I personally encounter. Each experiment is
-            a chance to find out what AI can and cannot yet do
-            in medicine.
+            I'm Richard Ahroon — a US board-certified physician
+            based in Karlstad, Sweden, working part-time in the
+            United States. I can feel the clinical landscape
+            changing as AI tools mature. I'm trying to stay close
+            to both sides — practicing clinically and building
+            small experiments — to see what actually helps at the
+            bedside, and what doesn't.
           </p>
         </div>
 
@@ -163,7 +164,7 @@ export default function Home() {
             marginBottom: '0.75rem',
             marginTop: 0,
           }}>
-            AI-powered Swedish language prep
+            AI-generated Swedish learning, A1 to C1
           </h2>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -173,12 +174,14 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            A Swedish learning tool for levels A1 through C1 — with
-            Tisus-grade essay assessment, topic-focused grammar
-            drills, and reading comprehension modeled on the real
-            exam.
+            I built this to prepare for the Swedish language
+            proficiency exam required for foreign-trained
+            physicians. Existing tools didn't match how I study or
+            where my gaps were, so I made one that does. AI
+            generates the questions, grades the essays, and
+            adapts to my actual weaknesses.
           </p>
-          <a
+          
             href="https://swedish-learning-app-beta.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
@@ -195,12 +198,12 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Experiment 2 — Coming soon */}
+        {/* Experiment 2 — Ghost Signout */}
         <div style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '4rem',
-          opacity: 0.65,
+          opacity: 0.85,
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -210,29 +213,53 @@ export default function Home() {
             textTransform: 'uppercase',
             margin: '0 0 0.5rem 0',
           }}>
-            #2 · In progress
+            #2 · Ghost Signout
           </p>
           <h2 style={{
             fontFamily: '"Georgia", serif',
             fontSize: '1.375rem',
             fontWeight: 400,
             color: '#2a2a2a',
-            marginBottom: '0.75rem',
+            marginBottom: '0.5rem',
             marginTop: 0,
           }}>
-            Clinical handoff generator
+            What the morning handoff doesn't capture
           </h2>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            fontStyle: 'italic',
+            color: '#8a8a8a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            In development.
+          </p>
           <p style={{
             fontFamily: '"Georgia", serif',
             fontSize: '1rem',
             lineHeight: '1.7',
             color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            I work solo overnight shifts. A lot of what I do at
+            night doesn't fit into the regular morning handoff —
+            patients who leave against medical advice, are
+            transferred to tertiary centers, or are admitted and
+            discharged before dawn. They drop off the handoff
+            list before the day team sees them. I'm building a
+            tool to capture these events during the shift and
+            produce a clean morning document for the group.
+          </p>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            color: '#8a8a8a',
             marginBottom: 0,
             marginTop: 0,
           }}>
-            Turns unstructured patient information into clean
-            SBAR-formatted handoffs. Currently testing against
-            synthetic clinical scenarios.
+            Coming soon
           </p>
         </div>
 
@@ -245,14 +272,14 @@ export default function Home() {
           marginTop: '2rem',
           marginBottom: '2rem',
         }}>
-          <a
-            href="mailto:richard@Floviken.se"
+          
+            href="mailto:richard@floviken.se"
             style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}
           >
-            richard@Floviken.se
+            richard@floviken.se
           </a>
           <span style={{ margin: '0 0.75rem', color: '#c8c2b5' }}>·</span>
-          <a
+          
             href="https://linkedin.com/in/richard-ahroon"
             target="_blank"
             rel="noopener noreferrer"
