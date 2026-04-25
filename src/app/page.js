@@ -1,4 +1,3 @@
-cat > src/app/page.js << 'ENDOFFILE'
 export default function Home() {
   return (
     <main style={{
@@ -208,4 +207,3 @@ export default function Home() {
     </main>
   );
 }
-ENDOFFILE
