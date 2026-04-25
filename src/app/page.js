@@ -68,7 +68,6 @@ export default function Home() {
           </svg>
         </div>
 
-        {/* Name */}
         <h1 style={{
           fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
           fontSize: '2.25rem',
@@ -82,7 +81,6 @@ export default function Home() {
           Floviken
         </h1>
 
-        {/* Tagline */}
         <p style={{
           fontFamily: '"Georgia", "Times New Roman", serif',
           fontSize: '1.125rem',
@@ -95,7 +93,6 @@ export default function Home() {
           Experiments in AI and medicine
         </p>
 
-        {/* About */}
         <div style={{
           fontFamily: '"Georgia", "Times New Roman", serif',
           fontSize: '1.0625rem',
@@ -108,17 +105,10 @@ export default function Home() {
           marginRight: 'auto',
         }}>
           <p style={{ margin: 0 }}>
-            I'm Richard Ahroon — a US board-certified physician
-            based in Karlstad, Sweden, working part-time in the
-            United States. I can feel the clinical landscape
-            changing as AI tools mature. I'm trying to stay close
-            to both sides — practicing clinically and building
-            small experiments — to see what actually helps at the
-            bedside, and what doesn't.
+            I&apos;m Richard Ahroon — a US board-certified physician based in Karlstad, Sweden, working part-time in the United States. I can feel the clinical landscape changing as AI tools mature. I&apos;m trying to stay close to both sides — practicing clinically and building small experiments — to see what actually helps at the bedside, and what doesn&apos;t.
           </p>
         </div>
 
-        {/* Divider */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
@@ -139,7 +129,6 @@ export default function Home() {
           <div style={{ height: '1px', backgroundColor: '#d8d2c5', flex: 1 }} />
         </div>
 
-        {/* Experiment 1 — Svenska */}
         <div style={{
           borderTop: '1px solid #e8e2d5',
           borderBottom: '1px solid #e8e2d5',
@@ -174,12 +163,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            I built this to prepare for the Swedish language
-            proficiency exam required for foreign-trained
-            physicians. Existing tools didn't match how I study or
-            where my gaps were, so I made one that does. AI
-            generates the questions, grades the essays, and
-            adapts to my actual weaknesses.
+            I built this to prepare for the Swedish language proficiency exam required for foreign-trained physicians. Existing tools didn&apos;t match how I study or where my gaps were, so I made one that does. AI generates the questions, grades the essays, and adapts to my actual weaknesses.
           </p>
           
             href="https://swedish-learning-app-beta.vercel.app"
@@ -198,7 +182,6 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Experiment 2 — Ghost Signout */}
         <div style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
@@ -223,7 +206,7 @@ export default function Home() {
             marginBottom: '0.5rem',
             marginTop: 0,
           }}>
-            What the morning handoff doesn't capture
+            What the morning handoff doesn&apos;t capture
           </h2>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -243,14 +226,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            I work solo overnight shifts. A lot of what I do at
-            night doesn't fit into the regular morning handoff —
-            patients who leave against medical advice, are
-            transferred to tertiary centers, or are admitted and
-            discharged before dawn. They drop off the handoff
-            list before the day team sees them. I'm building a
-            tool to capture these events during the shift and
-            produce a clean morning document for the group.
+            I work solo overnight shifts. A lot of what I do at night doesn&apos;t fit into the regular morning handoff — patients who leave against medical advice, are transferred to tertiary centers, or are admitted and discharged before dawn. They drop off the handoff list before the day team sees them. I&apos;m building a tool to capture these events during the shift and produce a clean morning document for the group.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -263,7 +239,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Footer */}
         <footer style={{
           fontFamily: '"Inter", -apple-system, sans-serif',
           fontSize: '0.875rem',
