@@ -12,7 +12,6 @@ export default function Home() {
         width: '100%',
       }}>
 
-        {/* Hero sketch */}
         <div style={{ marginBottom: '3rem', marginTop: '2rem' }}>
           <svg
             viewBox="0 0 680 340"
@@ -105,7 +104,7 @@ export default function Home() {
           marginRight: 'auto',
         }}>
           <p style={{ margin: 0 }}>
-            I&apos;m Richard Ahroon — a US board-certified physician based in Karlstad, Sweden, working part-time in the United States. I can feel the clinical landscape changing as AI tools mature. I&apos;m trying to stay close to both sides — practicing clinically and building small experiments — to see what actually helps at the bedside, and what doesn&apos;t.
+            I&apos;m Richard Ahroon &mdash; a US board-certified physician based in Karlstad, Sweden, working part-time in the United States. I can feel the clinical landscape changing as AI tools mature. I&apos;m trying to stay close to both sides &mdash; practicing clinically and building small experiments &mdash; to see what actually helps at the bedside, and what doesn&apos;t.
           </p>
         </div>
 
@@ -143,7 +142,7 @@ export default function Home() {
             textTransform: 'uppercase',
             margin: '0 0 0.5rem 0',
           }}>
-            #1 · Svenska
+            #1 &middot; Svenska
           </p>
           <h2 style={{
             fontFamily: '"Georgia", serif',
@@ -165,20 +164,15 @@ export default function Home() {
           }}>
             I built this to prepare for the Swedish language proficiency exam required for foreign-trained physicians. Existing tools didn&apos;t match how I study or where my gaps were, so I made one that does. AI generates the questions, grades the essays, and adapts to my actual weaknesses.
           </p>
-          
-            href="https://swedish-learning-app-beta.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: '"Inter", -apple-system, sans-serif',
-              fontSize: '0.9375rem',
-              color: '#2a332a',
-              textDecoration: 'none',
-              borderBottom: '1px solid #2a332a',
-              paddingBottom: '1px',
-            }}
-          >
-            Try it →
+          <a href="https://swedish-learning-app-beta.vercel.app" target="_blank" rel="noopener noreferrer" style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.9375rem',
+            color: '#2a332a',
+            textDecoration: 'none',
+            borderBottom: '1px solid #2a332a',
+            paddingBottom: '1px',
+          }}>
+            Try it &rarr;
           </a>
         </div>
 
@@ -196,7 +190,7 @@ export default function Home() {
             textTransform: 'uppercase',
             margin: '0 0 0.5rem 0',
           }}>
-            #2 · Ghost Signout
+            #2 &middot; Ghost Signout
           </p>
           <h2 style={{
             fontFamily: '"Georgia", serif',
@@ -226,7 +220,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            I work solo overnight shifts. A lot of what I do at night doesn&apos;t fit into the regular morning handoff — patients who leave against medical advice, are transferred to tertiary centers, or are admitted and discharged before dawn. They drop off the handoff list before the day team sees them. I&apos;m building a tool to capture these events during the shift and produce a clean morning document for the group.
+            I work solo overnight shifts. A lot of what I do at night doesn&apos;t fit into the regular morning handoff &mdash; patients who leave against medical advice, are transferred to tertiary centers, or are admitted and discharged before dawn. They drop off the handoff list before the day team sees them. I&apos;m building a tool to capture these events during the shift and produce a clean morning document for the group.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -247,19 +241,11 @@ export default function Home() {
           marginTop: '2rem',
           marginBottom: '2rem',
         }}>
-          
-            href="mailto:richard@floviken.se"
-            style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}
-          >
+          <a href="mailto:richard@floviken.se" style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>
             richard@floviken.se
           </a>
-          <span style={{ margin: '0 0.75rem', color: '#c8c2b5' }}>·</span>
-          
-            href="https://linkedin.com/in/richard-ahroon"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}
-          >
+          <span style={{ margin: '0 0.75rem', color: '#c8c2b5' }}>&middot;</span>
+          <a href="https://linkedin.com/in/richard-ahroon" target="_blank" rel="noopener noreferrer" style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>
             LinkedIn
           </a>
         </footer>
