@@ -133,7 +133,6 @@ export default function Home() {
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '4rem',
-          opacity: 0.85,
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -150,39 +149,40 @@ export default function Home() {
             fontSize: '1.375rem',
             fontWeight: 400,
             color: '#2a2a2a',
-            marginBottom: '0.5rem',
+            marginBottom: '0.75rem',
             marginTop: 0,
           }}>
             What the morning handoff doesn&apos;t capture
           </h2>
           <p style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.875rem',
-            fontStyle: 'italic',
-            color: '#8a8a8a',
-            marginBottom: '1rem',
-            marginTop: 0,
-          }}>
-            In development.
-          </p>
-          <p style={{
             fontFamily: '"Georgia", serif',
             fontSize: '1rem',
             lineHeight: '1.7',
             color: '#4a4a4a',
-            marginBottom: '1rem',
+            marginBottom: '1.25rem',
             marginTop: 0,
           }}>
             I work solo overnight shifts. A lot of what I do at night doesn&apos;t fit into the regular morning handoff &mdash; patients who leave against medical advice, are transferred to tertiary centers, or are admitted and discharged before dawn. They drop off the handoff list before the day team sees them. I&apos;m building a tool to capture these events during the shift and produce a clean morning document for the group.
           </p>
-          <p style={{
+          <a href="https://ghost-signout.vercel.app/capture" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.875rem',
-            color: '#8a8a8a',
-            marginBottom: 0,
-            marginTop: 0,
+            fontSize: '0.9375rem',
+            color: '#2a332a',
+            textDecoration: 'none',
+            borderBottom: '1px solid #2a332a',
+            paddingBottom: '1px',
           }}>
-            Coming soon
+            Try it &rarr;
+          </a>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '0.875rem',
+            fontStyle: 'italic',
+            color: '#8a8a8a',
+            marginTop: '0.75rem',
+            marginBottom: 0,
+          }}>
+            Synthetic data only &mdash; currently a single-user prototype.
           </p>
         </div>
 
