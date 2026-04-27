@@ -159,10 +159,40 @@ export default function Home() {
             fontSize: '1rem',
             lineHeight: '1.7',
             color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            Morning handoff documents are written for the patients still on service. The patients who came off overnight &mdash; the AMAs, the comfort-care deaths, the transfers to higher-level care, the admits who got discharged before sunrise &mdash; drop off the handoff list before the day team ever sees them.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            That&apos;s a clinical visibility gap. It&apos;s also, in places, a patient safety one. The 0200 AMA whose capacity assessment never makes it into the chart. The transfer where the family wasn&apos;t notified. The pending callback that nobody picks up because nobody knows it&apos;s pending.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            Ghost Signout is a small tool I built to capture these events as they happen during a shift, then generate a clean morning document the day team can scan in 30 seconds. The categories are the ones that actually disappear: Expired, Inpatient Hospice, AMA, Transfer Out, Admit &amp; Discharge, and Critical Follow-up.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            I work solo overnight shifts. A lot of what I do at night doesn&apos;t fit into the regular morning handoff &mdash; patients who leave against medical advice, are transferred to tertiary centers, or are admitted and discharged before dawn. They drop off the handoff list before the day team sees them. I&apos;m building a tool to capture these events during the shift and produce a clean morning document for the group.
+            The capture pattern is intentionally simple &mdash; six taps, structured fields, AI-generated summary &mdash; so it could live as a standalone tool or as a module inside an existing EHR workflow.
           </p>
           <a href="https://ghost-signout.vercel.app/capture" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
