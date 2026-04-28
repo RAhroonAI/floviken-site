@@ -57,7 +57,7 @@ export default function Home() {
           marginRight: 'auto',
         }}>
           <p style={{ margin: 0 }}>
-            I&apos;m Richard Ahroon &mdash; a US board-certified physician based in Karlstad, Sweden, working part-time in the United States. I can feel the clinical landscape changing as AI tools mature. I&apos;m trying to stay close to both sides &mdash; practicing clinically and building small experiments &mdash; to see what actually helps at the bedside, and what doesn&apos;t.
+            I&apos;m Richard Ahroon &mdash; a US board-certified hospitalist based in Karlstad, Sweden, working part-time as a nocturnist in the United States. The AI landscape is changing fast, and I&apos;m genuinely excited about what it could mean for patient care. But I think clinical AI is going to be useful only when it&apos;s built around real clinical workflows, by people who do those workflows. So I&apos;m doing both &mdash; practicing clinically and building small experiments aimed at the gaps I can actually see at the bedside.
           </p>
         </div>
 
@@ -212,9 +212,18 @@ export default function Home() {
             fontStyle: 'italic',
             color: '#8a8a8a',
             marginTop: '0.75rem',
-            marginBottom: 0,
+            marginBottom: '0.5rem',
           }}>
             Synthetic data only &mdash; currently a single-user prototype.
+          </p>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            color: '#8a8a8a',
+            marginBottom: 0,
+            marginTop: 0,
+          }}>
+            In progress
           </p>
         </div>
 
