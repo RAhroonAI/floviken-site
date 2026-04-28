@@ -81,6 +81,7 @@ export default function Home() {
           <div style={{ height: '1px', backgroundColor: '#d8d2c5', flex: 1 }} />
         </div>
 
+        {/* #1 Svenska */}
         <div style={{
           borderTop: '1px solid #e8e2d5',
           borderBottom: '1px solid #e8e2d5',
@@ -115,7 +116,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            I built this to prepare for the Swedish language proficiency exam required for foreign-trained physicians. Existing tools didn&apos;t match how I study or where my gaps were, so I made one that does. AI generates the questions, grades the essays, and adapts to my actual weaknesses.
+            I built this to prepare for the Swedish language proficiency exam required for foreign-trained physicians. The existing tools weren&apos;t built around how I study or where my actual gaps were &mdash; so I made one that is. AI generates the questions, grades the essays, and adapts to the things I keep getting wrong.
           </p>
           <a href="https://swedish-learning-app-beta.vercel.app" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -129,10 +130,11 @@ export default function Home() {
           </a>
         </div>
 
+        {/* #2 Ghost Signout */}
         <div style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
-          marginBottom: '4rem',
+          marginBottom: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -162,7 +164,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Morning handoff documents are written for the patients still on service. The patients who came off overnight &mdash; the AMAs, the comfort-care deaths, the transfers to higher-level care, the admits who got discharged before sunrise &mdash; drop off the handoff list before the day team ever sees them.
+            Morning handoff documents are written for the patients still on the inpatient service. In some cases, patients come off the service overnight &mdash; they leave against medical advice (AMA), transfer to a higher-level facility, or get admitted and discharged before sunrise &mdash; and those patients don&apos;t appear on the morning list the day team sees.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -172,7 +174,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            That&apos;s a clinical visibility gap. It&apos;s also, in places, a patient safety one. The 0200 AMA whose capacity assessment never makes it into the chart. The transfer where the family wasn&apos;t notified. The pending callback that nobody picks up because nobody knows it&apos;s pending.
+            That&apos;s a clinical visibility gap. The patient who left AMA and still needs a follow-up call. The overnight lab result that needs day-team action. The middle-of-the-night transfer where the family couldn&apos;t be reached overnight and still needs to be contacted in the morning.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -213,6 +215,150 @@ export default function Home() {
             marginBottom: 0,
           }}>
             Synthetic data only &mdash; currently a single-user prototype.
+          </p>
+        </div>
+
+        {/* #3 Neutropenic Fever */}
+        <div style={{
+          borderBottom: '1px solid #e8e2d5',
+          padding: '2rem 0',
+          marginBottom: '1.5rem',
+        }}>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.75rem',
+            letterSpacing: '0.15em',
+            color: '#8a8a8a',
+            textTransform: 'uppercase',
+            margin: '0 0 0.5rem 0',
+          }}>
+            #3 &middot; Neutropenic Fever Decision Support
+          </p>
+          <h2 style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1.375rem',
+            fontWeight: 400,
+            color: '#2a2a2a',
+            marginBottom: '0.75rem',
+            marginTop: 0,
+          }}>
+            The 60-minute window
+          </h2>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            Neutropenic fever &mdash; an absolute neutrophil count below 500 paired with fever &mdash; has a 60-minute window for empiric antibiotics. Every hour of delay correlates with worse outcomes. The decision tree for which antibiotic class to start is well-defined and has been for years in the IDSA guidelines.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            Most EHRs surface the lab abnormality. Most stop there. The clinician still has to recognize the pattern, recall the guideline, and translate it into orders &mdash; under time pressure, often during a busy admission.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            This is a proof of concept for what surfacing the recommendation alongside the lab could look like. The tool takes a small set of inputs &mdash; ANC, temperature, allergies, renal function, prior multidrug-resistant organisms, severe sepsis features &mdash; and walks visibly through the IDSA decision tree, ending with a guideline-grounded antibiotic class recommendation and the reasoning that produced it. The clinician sees the work, not just the answer.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '0.875rem',
+            fontStyle: 'italic',
+            color: '#8a8a8a',
+            marginBottom: '0.5rem',
+            marginTop: 0,
+          }}>
+            Demonstration only &mdash; not a clinical tool, not deployed in any real workflow.
+          </p>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            color: '#8a8a8a',
+            marginBottom: 0,
+            marginTop: 0,
+          }}>
+            In progress
+          </p>
+        </div>
+
+        {/* #4 AMA Documentation */}
+        <div style={{
+          borderBottom: '1px solid #e8e2d5',
+          padding: '2rem 0',
+          marginBottom: '4rem',
+        }}>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.75rem',
+            letterSpacing: '0.15em',
+            color: '#8a8a8a',
+            textTransform: 'uppercase',
+            margin: '0 0 0.5rem 0',
+          }}>
+            #4 &middot; AMA Documentation
+          </p>
+          <h2 style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1.375rem',
+            fontWeight: 400,
+            color: '#2a2a2a',
+            marginBottom: '0.75rem',
+            marginTop: 0,
+          }}>
+            Where &ldquo;patient signed AMA&rdquo; stops being protection
+          </h2>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            A patient leaving against medical advice &mdash; AMA &mdash; is one of the highest-risk discharges in inpatient medicine. The widely held belief is that a signed AMA form is sufficient legal and clinical protection. It isn&apos;t. The signed form is one of the least important pieces. What actually matters is whether the chart shows the physician assessed decision-making capacity, named the specific risks (often including death), confirmed the patient&apos;s understanding, offered alternatives, and addressed reversible factors &mdash; pain, intoxication, undertreated psychiatric symptoms.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            Almost none of that gets captured fully in real time, especially at 2 a.m. with a hostile patient. The gap isn&apos;t physician knowledge &mdash; most of us know what should be documented. The gap is capture: there&apos;s no structured prompt at the moment the encounter is actually happening.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            I&apos;m building a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter &mdash; structured fields, evidence-grounded prompts, AI-assisted summary generation. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed.
+          </p>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            color: '#8a8a8a',
+            marginBottom: 0,
+            marginTop: 0,
+          }}>
+            In progress
           </p>
         </div>
 
