@@ -57,16 +57,16 @@ export default function Home() {
           marginRight: 'auto',
         }}>
           <p style={{ margin: '0 0 1rem 0' }}>
-            I&apos;m Richard Ahroon &mdash; board-certified internist, US/Swedish dual citizen based in Sweden, with active clinical practice in the United States. Trained in biomedical engineering &mdash; a long-standing interest in where clinical medicine meets technology.
+            I&apos;m Richard Ahroon, a board-certified internist and US/Swedish dual citizen based in Sweden, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
           </p>
           <p style={{ margin: '0 0 1rem 0' }}>
-            My day-to-day work spans inpatient hospital medicine, critical care, and AI-enabled tools &mdash; ambient documentation, clinical decision support, alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
+            My day-to-day work spans inpatient hospital medicine, critical care, and AI-enabled tools including ambient documentation, clinical decision support, and alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
           </p>
           <p style={{ margin: '0 0 1rem 0' }}>
-            I build small clinical AI experiments aimed at workflow gaps I see in real shifts &mdash; handoff visibility, time-critical decision support, high-risk encounter documentation. Independent projects, not deployed in any clinical setting.
+            I build small clinical AI experiments aimed at workflow gaps I see in real shifts, including handoff visibility, time-critical decision support, and high-risk encounter documentation. These are independent projects, not deployed in any clinical setting.
           </p>
           <p style={{ margin: 0 }}>
-            If you&apos;re working on clinical AI and want a clinician&apos;s perspective &mdash; or you&apos;re a clinician thinking about getting closer to the tech side &mdash; I&apos;d like to hear from you.
+            If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            I built this to prepare for the Swedish language proficiency exam required for foreign-trained physicians. The existing tools weren&apos;t built around how I study or where my actual gaps were &mdash; so I made one that is. AI generates the questions, grades the essays, and adapts to the things I keep getting wrong.
+            I built this to prepare for the Swedish language proficiency exam required for foreign-trained physicians. The existing tools weren&apos;t built around how I study or where my actual gaps were, so I made one that is. AI generates the questions, grades the essays, and adapts to the things I keep getting wrong.
           </p>
           <a href="https://swedish-learning-app-beta.vercel.app" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -173,7 +173,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Morning handoff documents are written for the patients still on the inpatient service. In some cases, patients come off the service overnight &mdash; they leave against medical advice (AMA), transfer to a higher-level facility, or get admitted and discharged before sunrise &mdash; and those patients don&apos;t appear on the morning list the day team sees.
+            Morning handoff documents are written for the patients still on the inpatient service. In some cases, patients come off the service overnight. They leave against medical advice (AMA), transfer to a higher-level facility, or get admitted and discharged before sunrise. Those patients don&apos;t appear on the morning list the day team sees.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -203,7 +203,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            The capture pattern is intentionally simple &mdash; six taps, structured fields, AI-generated summary &mdash; so it could live as a standalone tool or as a module inside an existing EHR workflow.
+            The capture pattern is intentionally simple, with six taps, structured fields, and an AI-generated summary, so it could live as a standalone tool or as a module inside an existing EHR workflow.
           </p>
           <a href="https://ghost-signout.vercel.app/capture" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -223,7 +223,7 @@ export default function Home() {
             marginTop: '0.75rem',
             marginBottom: '0.5rem',
           }}>
-            Synthetic data only &mdash; currently a single-user prototype.
+            Synthetic data only. Currently a single-user prototype.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -270,7 +270,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Neutropenic fever &mdash; an absolute neutrophil count below 500 paired with fever &mdash; has a 60-minute window for empiric antibiotics. Every hour of delay correlates with worse outcomes. The decision tree for which antibiotic class to start is well-defined and has been for years in the IDSA guidelines.
+            Neutropenic fever is defined as an absolute neutrophil count below 500 paired with fever, and it has a 60-minute window for empiric antibiotics. Every hour of delay correlates with worse outcomes. The decision tree for which antibiotic class to start is well-defined and has been for years in the IDSA guidelines.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -280,7 +280,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Most EHRs surface the lab abnormality. Most stop there. The clinician still has to recognize the pattern, recall the guideline, and translate it into orders &mdash; under time pressure, often during a busy admission.
+            Most EHRs surface the lab abnormality. Most stop there. The clinician still has to recognize the pattern, recall the guideline, and translate it into orders, often under time pressure during a busy admission.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -290,7 +290,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            This is a proof of concept for what surfacing the recommendation alongside the lab could look like. The tool takes a small set of inputs &mdash; ANC, temperature, allergies, renal function, prior multidrug-resistant organisms, severe sepsis features &mdash; and walks visibly through the IDSA decision tree, ending with a guideline-grounded antibiotic class recommendation and the reasoning that produced it. Most clinical AI shows you an answer. This one shows you how it got there &mdash; so the clinician can confirm each step, not just trust the output.
+            This is a proof of concept for what surfacing the recommendation alongside the lab could look like. The tool takes a small set of inputs (ANC, temperature, allergies, renal function, prior multidrug-resistant organisms, severe sepsis features) and walks visibly through the IDSA decision tree, ending with a guideline-grounded antibiotic class recommendation and the reasoning that produced it. Most clinical AI shows you an answer. This one shows you how it got there, so the clinician can confirm each step rather than just trust the output.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -300,7 +300,7 @@ export default function Home() {
             marginBottom: '0.5rem',
             marginTop: 0,
           }}>
-            Demonstration only &mdash; not a clinical tool, not deployed in any real workflow.
+            Demonstration only. Not a clinical tool, not deployed in any real workflow.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -347,7 +347,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            A patient leaving against medical advice &mdash; AMA &mdash; is one of the highest-risk discharges in inpatient medicine. The widely held belief is that a signed AMA form is sufficient legal and clinical protection. It isn&apos;t. The signed form is one of the least important pieces. What actually matters is whether the chart shows the physician assessed decision-making capacity, named the specific risks (often including death), confirmed the patient&apos;s understanding, offered alternatives, and addressed reversible factors &mdash; pain, intoxication, undertreated psychiatric symptoms.
+            A patient leaving against medical advice (AMA) is one of the highest-risk discharges in inpatient medicine. The widely held belief is that a signed AMA form is sufficient legal and clinical protection. It isn&apos;t. The signed form is one of the least important pieces. What actually matters is whether the chart shows the physician assessed decision-making capacity, named the specific risks (often including death), confirmed the patient&apos;s understanding, offered alternatives, and addressed reversible factors like pain, intoxication, and undertreated psychiatric symptoms.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -357,7 +357,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Almost none of that gets captured fully in real time, especially at 2 a.m. with a hostile patient. The gap isn&apos;t physician knowledge &mdash; most of us know what should be documented. The gap is capture: there&apos;s no structured prompt at the moment the encounter is actually happening.
+            Almost none of that gets captured fully in real time, especially at 2 a.m. with a hostile patient. The gap isn&apos;t physician knowledge. Most of us know what should be documented. The gap is capture, because there&apos;s no structured prompt at the moment the encounter is actually happening.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -367,7 +367,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            I&apos;m building a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter &mdash; structured fields, evidence-grounded prompts, AI-assisted summary generation. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed.
+            I&apos;m building a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, evidence-grounded prompts, and AI-assisted summary generation. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
