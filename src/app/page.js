@@ -56,8 +56,17 @@ export default function Home() {
           marginLeft: 'auto',
           marginRight: 'auto',
         }}>
+          <p style={{ margin: '0 0 1rem 0' }}>
+            I&apos;m Richard Ahroon &mdash; board-certified internist, US/Swedish dual citizen based in Sweden, with active clinical practice in the United States. Trained in biomedical engineering &mdash; a long-standing interest in where clinical medicine meets technology.
+          </p>
+          <p style={{ margin: '0 0 1rem 0' }}>
+            My day-to-day work spans inpatient hospital medicine, critical care, and AI-enabled tools &mdash; ambient documentation, clinical decision support, alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
+          </p>
+          <p style={{ margin: '0 0 1rem 0' }}>
+            I build small clinical AI experiments aimed at workflow gaps I see in real shifts &mdash; handoff visibility, time-critical decision support, high-risk encounter documentation. Independent projects, not deployed in any clinical setting.
+          </p>
           <p style={{ margin: 0 }}>
-            I&apos;m Richard Ahroon &mdash; a US board-certified hospitalist based in Karlstad, Sweden, working part-time as a nocturnist in the United States. The AI landscape is changing fast, and I&apos;m genuinely excited about what it could mean for patient care. But I think clinical AI is going to be useful only when it&apos;s built around real clinical workflows, by people who do those workflows. So I&apos;m doing both &mdash; practicing clinically and building small experiments aimed at the gaps I can actually see at the bedside.
+            If you&apos;re working on clinical AI and want a clinician&apos;s perspective &mdash; or you&apos;re a clinician thinking about getting closer to the tech side &mdash; I&apos;d like to hear from you.
           </p>
         </div>
 
