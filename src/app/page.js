@@ -272,7 +272,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            This is a proof of concept for what surfacing the recommendation alongside the lab could look like. The tool takes a small set of inputs &mdash; ANC, temperature, allergies, renal function, prior multidrug-resistant organisms, severe sepsis features &mdash; and walks visibly through the IDSA decision tree, ending with a guideline-grounded antibiotic class recommendation and the reasoning that produced it. The clinician sees the work, not just the answer.
+            This is a proof of concept for what surfacing the recommendation alongside the lab could look like. The tool takes a small set of inputs &mdash; ANC, temperature, allergies, renal function, prior multidrug-resistant organisms, severe sepsis features &mdash; and walks visibly through the IDSA decision tree, ending with a guideline-grounded antibiotic class recommendation and the reasoning that produced it. Most clinical AI shows you an answer. This one shows you how it got there &mdash; so the clinician can confirm each step, not just trust the output.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
