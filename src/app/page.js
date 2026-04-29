@@ -392,7 +392,7 @@ export default function Home() {
             richard@floviken.se
           </a>
           <span style={{ margin: '0 0.75rem', color: '#c8c2b5' }}>&middot;</span>
-          <a href="https://linkedin.com/in/richard-ahroon" target="_blank" rel="noopener noreferrer" style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>
+          <a href="https://www.linkedin.com/in/richard-ahroon-md/" target="_blank" rel="noopener noreferrer" style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>
             LinkedIn
           </a>
         </footer>
