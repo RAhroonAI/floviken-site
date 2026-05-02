@@ -242,7 +242,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Foldspace is an experiment in data integrity. Type a UniProt ID, get a one-page clinical briefing in 60 seconds: function, clinical relevance, approved drugs, structural confidence. The data comes from UniProt, AlphaFold, and ChEMBL, fetched live every time. Claude reads those facts and writes the briefing on top of them. The model is never asked to remember. It is told.
+            Foldspace is an experiment in data integrity. Type a UniProt ID, get a one-page clinical briefing in 60 seconds: function, clinical relevance, approved drugs, structural confidence. The data comes from UniProt, AlphaFold, and ChEMBL, fetched live every time. AI reads those facts and writes the briefing on top of them. The model is never asked to remember. It is told.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -272,7 +272,7 @@ export default function Home() {
             marginTop: '0.75rem',
             marginBottom: '0.5rem',
           }}>
-            Demonstration only. Live at foldspace.floviken.se with all three data sources synthesized through Claude.
+            Demonstration only. Live at foldspace.floviken.se with all three data sources synthesized through AI.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
