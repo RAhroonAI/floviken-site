@@ -222,7 +222,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Clinicians are increasingly asked to cross into territory that used to belong to PhDs: molecular biology, drug discovery, structural prediction. Reading a paper on a new kinase inhibitor at 11 p.m. Sitting in a meeting where someone says &ldquo;PCSK9&rdquo; and assumes you know. Moving toward pharma medical affairs and realizing the vocabulary of drug discovery is suddenly part of clinical literacy.
+            Foldspace is a small experiment in data integrity, run in one of the most exciting spaces in science right now — drug discovery, protein folding, and the molecular biology of human disease. AlphaFold has computed predicted structures for nearly every known protein. UniProt has curated the functional annotations. ChEMBL has logged decades of bioactivity data. The raw material is open and current.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -232,17 +232,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            The catch: precisely because the work is at the edge of a fast-changing field, you can&apos;t trust a chat model to keep you current. Drugs are approved. Structures are predicted. Bioactivities are published. A model trained a year ago will tell you, with calm confidence, that a drug is in Phase 3 trials when it was approved last spring. For a clinician moving into moving terrain, that&apos;s the failure mode that disqualifies the tool.
-          </p>
-          <p style={{
-            fontFamily: '"Georgia", serif',
-            fontSize: '1rem',
-            lineHeight: '1.7',
-            color: '#4a4a4a',
-            marginBottom: '1rem',
-            marginTop: 0,
-          }}>
-            Foldspace is an experiment in data integrity. Type a UniProt ID, get a one-page clinical briefing in 60 seconds: function, clinical relevance, approved drugs, structural confidence. The data comes from UniProt, AlphaFold, and ChEMBL, fetched live every time. AI reads those facts and writes the briefing on top of them. The model is never asked to remember. It is told.
+            The experiment: type a UniProt ID, get a one-page clinical briefing in 60 seconds — function, clinical relevance, approved drugs, structural confidence. The data comes from those three sources, fetched live every time. AI writes the language; the data is never recalled from training. The model isn&apos;t the source. It&apos;s the translator.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -252,7 +242,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            The architectural commitment is the point: databases for facts, AI for language, no exceptions. A tool that hallucinates a drug name into a clinical briefing has failed in a way that disqualifies the whole tool. A tool that can only describe facts it was just handed is a different kind of instrument.
+            It&apos;s a small attempt at what data integrity might look like as AI enters clinical and pharmacological workflows.
           </p>
           <a href="https://foldspace.floviken.se" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -272,7 +262,7 @@ export default function Home() {
             marginTop: '0.75rem',
             marginBottom: '0.5rem',
           }}>
-            Demonstration only. Live at foldspace.floviken.se with all three data sources synthesized through AI.
+            Demonstration only. Live at foldspace.floviken.se.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
