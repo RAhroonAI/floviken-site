@@ -66,7 +66,7 @@ export default function Home() {
             I build small clinical AI experiments aimed at workflow gaps I see in real shifts, including handoff visibility, time-critical decision support, and high-risk encounter documentation. These are independent projects, not deployed in any clinical setting.
           </p>
           <p style={{ margin: 0 }}>
-            If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you.
+            If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you at <a href="mailto:richard@floviken.se" style={{ color: '#3a3a3a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>richard@floviken.se</a>.
           </p>
         </div>
 
@@ -173,18 +173,9 @@ export default function Home() {
             fontStyle: 'italic',
             color: '#8a8a8a',
             marginTop: '0.75rem',
-            marginBottom: '0.5rem',
-          }}>
-            Synthetic data only. Currently a single-user prototype.
-          </p>
-          <p style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.875rem',
-            color: '#8a8a8a',
             marginBottom: 0,
-            marginTop: 0,
           }}>
-            In progress
+            Synthetic data only. Currently a single-user prototype. Live at ghost-signout.vercel.app/capture.
           </p>
         </div>
 
@@ -260,18 +251,9 @@ export default function Home() {
             fontStyle: 'italic',
             color: '#8a8a8a',
             marginTop: '0.75rem',
-            marginBottom: '0.5rem',
+            marginBottom: 0,
           }}>
             Demonstration only. Live at foldspace.floviken.se.
-          </p>
-          <p style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.875rem',
-            color: '#8a8a8a',
-            marginBottom: 0,
-            marginTop: 0,
-          }}>
-            In progress
           </p>
         </div>
 
@@ -357,18 +339,9 @@ export default function Home() {
             fontStyle: 'italic',
             color: '#8a8a8a',
             marginTop: '0.75rem',
-            marginBottom: '0.5rem',
-          }}>
-            Demonstration only. All drug names redacted to class level. Live at lowfire.floviken.se.
-          </p>
-          <p style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.875rem',
-            color: '#8a8a8a',
             marginBottom: 0,
-            marginTop: 0,
           }}>
-            In progress
+            Demonstration only. Live at lowfire.floviken.se.
           </p>
         </div>
 
