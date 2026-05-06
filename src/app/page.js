@@ -339,7 +339,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            The architectural commitment is that the recommendation never comes from the AI. The algorithm is the source of truth. Claude only handles the language. Same shape as Foldspace, applied to actionable orders this time.
+            The architectural commitment is that the recommendation never comes from the AI. The algorithm is the source of truth. Claude only handles the language. Antibiotic names are redacted to drug class with no dosing recommendations, so there can be no confusion that this is anything but a prototype. Same shape as Foldspace, applied to actionable orders this time.
           </p>
           <a href="https://lowfire.floviken.se" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
