@@ -60,10 +60,10 @@ export default function Home() {
             I&apos;m Richard Ahroon, a board-certified internist and US/Swedish dual citizen based in Sweden, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
           </p>
           <p style={{ margin: '0 0 1rem 0' }}>
-            My day-to-day work spans inpatient hospital medicine, critical care, and AI-enabled tools including ambient documentation, clinical decision support, and alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
+            My day-to-day work is inpatient hospital medicine, including ICU-level care, increasingly mediated by AI-enabled tools &mdash; ambient documentation, clinical decision support, and alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
           </p>
           <p style={{ margin: '0 0 1rem 0' }}>
-            I build small clinical AI experiments aimed at workflow gaps I see in real shifts, including handoff visibility, time-critical decision support, and high-risk encounter documentation. These are independent projects, not deployed in any clinical setting.
+            I build small clinical AI experiments exploring common hospitalist workflow questions &mdash; handoff structure, time-critical decision support, high-risk encounter documentation. Built from public guidelines and synthetic cases. Independent projects, not deployed in any clinical setting.
           </p>
           <p style={{ margin: 0 }}>
             If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you at <a href="mailto:richard@floviken.se" style={{ color: '#3a3a3a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>richard@floviken.se</a>.
@@ -145,7 +145,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Ghost Signout is a small tool I built to capture these events as they happen during a shift, then generate a clean morning document the day team can scan in 30 seconds. The categories are the ones that actually disappear: Expired, Inpatient Hospice, AMA, Transfer Out, Admit &amp; Discharge, and Critical Follow-up.
+            Ghost Signout is a small prototype I built that captures these events using structured fields during a hypothetical shift, then generates a clean morning document a day team could scan in 30 seconds. The categories are the ones that actually disappear: Expired, Inpatient Hospice, AMA, Transfer Out, Admit &amp; Discharge, and Critical Follow-up.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -466,7 +466,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Sundown is a small experiment in what could happen in that minute. When the secure message contains a delirium or agitation signal, a deterministic chart review runs against an evidence-anchored set of items &mdash; recent deliriogenic medications, anticholinergic burden, Foley status, last bowel movement, electrolytes, QTc, baseline cognitive status, sensory aids, recent procedures. Items that should be present but aren&apos;t are surfaced as gaps. The hospitalist reads one screen on the way to the bedside, walks in with the differential already narrowing, and gets to the assessment faster.
+            Sundown is a small experiment in what could happen in that minute. In the prototype, when a simulated secure message contains a delirium or agitation signal, a deterministic chart review runs against an evidence-anchored set of items &mdash; recent deliriogenic medications, anticholinergic burden, Foley status, last bowel movement, electrolytes, QTc, baseline cognitive status, sensory aids, recent procedures. Items that should be present but aren&apos;t are surfaced as gaps. The hospitalist reads one screen on the way to the bedside, walks in with the differential already narrowing, and gets to the assessment faster.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
