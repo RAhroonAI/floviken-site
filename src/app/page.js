@@ -389,7 +389,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Almost none of that gets captured fully in real time, especially at 2 a.m. with a hostile patient. The gap isn&apos;t physician knowledge. Most of us know what should be documented. The gap is capture, because there&apos;s no structured prompt at the moment the encounter is actually happening.
+            Almost none of that gets captured fully in real time, especially in middle-of-the-night encounters where the patient is agitated or refusing to engage. The gap isn&apos;t physician knowledge. Most of us know what should be documented. The gap is capture, because there&apos;s no structured prompt at the moment the encounter is actually happening.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -399,7 +399,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            I&apos;m building a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, evidence-grounded prompts, and AI-assisted summary generation. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed.
+            I&apos;m building a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, evidence-grounded prompts, and AI-assisted summary generation. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
