@@ -57,7 +57,7 @@ export default function Home() {
           marginRight: 'auto',
         }}>
           <p style={{ margin: '0 0 1rem 0' }}>
-            I&apos;m Richard Ahroon, a board-certified internist and US/Swedish dual citizen based in Sweden, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
+            I&apos;m Richard Ahroon, a board-certified internist and US/Swedish dual citizen, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
           </p>
           <p style={{ margin: '0 0 1rem 0' }}>
             My day-to-day work is inpatient hospital medicine, including ICU-level care, increasingly mediated by AI-enabled tools &mdash; ambient documentation, clinical decision support, and alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
