@@ -427,7 +427,7 @@ export default function Home() {
         <div style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
-          marginBottom: '4rem',
+          marginBottom: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -495,6 +495,63 @@ export default function Home() {
             color: '#8a8a8a',
             marginBottom: 0,
             marginTop: 0,
+          }}>
+            In progress
+          </p>
+        </div>
+
+        {/* #6 Margin */}
+        <div style={{
+          borderBottom: '1px solid #e8e2d5',
+          padding: '2rem 0',
+          marginBottom: '4rem',
+        }}>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.75rem',
+            letterSpacing: '0.15em',
+            color: '#8a8a8a',
+            textTransform: 'uppercase',
+            margin: '0 0 0.5rem 0',
+          }}>
+            #6 &middot; Margin
+          </p>
+          <h2 style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1.375rem',
+            fontWeight: 400,
+            color: '#2a2a2a',
+            marginBottom: '0.75rem',
+            marginTop: 0,
+          }}>
+            An experiment in chart review for incidental findings
+          </h2>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1.25rem',
+            marginTop: 0,
+          }}>
+            Incidental findings on inpatient imaging &mdash; pulmonary nodules, adrenal masses, thyroid lesions &mdash; are routinely documented by radiologists and routinely lost in the focus on the acute problem. Published follow-up rates for clinically significant incidentals frequently sit between thirty and sixty percent.
+          </p>
+          <a href="/margin" style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.9375rem',
+            color: '#2a332a',
+            textDecoration: 'none',
+            borderBottom: '1px solid #2a332a',
+            paddingBottom: '1px',
+          }}>
+            Read more &rarr;
+          </a>
+          <p style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.875rem',
+            color: '#8a8a8a',
+            marginTop: '0.75rem',
+            marginBottom: 0,
           }}>
             In progress
           </p>
