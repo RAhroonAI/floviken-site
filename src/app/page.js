@@ -399,16 +399,37 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            I&apos;m building a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, evidence-grounded prompts, and AI-assisted summary generation. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
+            Doorstep is a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, a curated risk library, and no language model in the stack. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
           </p>
           <p style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.875rem',
-            color: '#8a8a8a',
-            marginBottom: 0,
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            In progress
+            The discharge summary is always completed by the attending. Doorstep is meant as a checklist for the cross-covering or night physician &mdash; a structured prompt at the moment of the AMA encounter, before the formal note gets written.
+          </p>
+          <a href="https://doorstep.floviken.se" target="_blank" rel="noopener noreferrer" style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: '0.9375rem',
+            color: '#2a332a',
+            textDecoration: 'none',
+            borderBottom: '1px solid #2a332a',
+            paddingBottom: '1px',
+          }}>
+            Try it &rarr;
+          </a>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '0.875rem',
+            fontStyle: 'italic',
+            color: '#8a8a8a',
+            marginTop: '0.75rem',
+            marginBottom: 0,
+          }}>
+            Demonstration only. Live at doorstep.floviken.se.
           </p>
         </div>
 
