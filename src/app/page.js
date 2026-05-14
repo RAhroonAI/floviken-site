@@ -531,27 +531,47 @@ export default function Home() {
             fontSize: '1rem',
             lineHeight: '1.7',
             color: '#4a4a4a',
-            marginBottom: '1.25rem',
+            marginBottom: '1rem',
             marginTop: 0,
           }}>
             Incidental findings on inpatient imaging &mdash; pulmonary nodules, adrenal masses, thyroid lesions &mdash; are routinely documented by radiologists and routinely lost in the focus on the acute problem. Published follow-up rates for clinically significant incidentals frequently sit between thirty and sixty percent.
           </p>
-          <a href="/margin" style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.9375rem',
-            color: '#2a332a',
-            textDecoration: 'none',
-            borderBottom: '1px solid #2a332a',
-            paddingBottom: '1px',
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
           }}>
-            Read more &rarr;
-          </a>
+            Margin asks a narrow question. Given a chest CT report and a discharge summary, can a language model reliably identify whether a documented pulmonary nodule was appropriately addressed in the discharge plan?
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            The experiment uses thirty fully synthetic charts, generated and locked to known ground truth, then reviewed by a separate model session with no memory of the construction. The point is not a statistically rigorous finding. The point is a reusable methodology: a prompt, a set of cases, a scoring approach, and an honest report of where the model succeeded and where it failed. A recipe, not a result.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            All synthetic cases, prompts, and code will be published openly when the room ships.
+          </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
             fontSize: '0.875rem',
             color: '#8a8a8a',
-            marginTop: '0.75rem',
             marginBottom: 0,
+            marginTop: 0,
           }}>
             In progress
           </p>
