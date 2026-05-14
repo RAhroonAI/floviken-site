@@ -379,7 +379,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            A patient leaving against medical advice (AMA) is one of the highest-risk discharges in inpatient medicine. The widely held belief is that a signed AMA form is sufficient legal and clinical protection. It isn&apos;t. The signed form is one of the least important pieces. What actually matters is whether the chart shows the physician assessed decision-making capacity, named the specific risks (often including death), confirmed the patient&apos;s understanding, offered alternatives, and addressed reversible factors like pain, intoxication, and undertreated psychiatric symptoms.
+            A patient leaving against medical advice (AMA) is one of the highest-risk discharges in inpatient medicine. The widely held belief is that a signed AMA form is sufficient legal and clinical protection. On its own, it isn&apos;t. The signed form is necessary but not the load-bearing piece. What matters is whether the chart shows the physician assessed decision-making capacity, named the specific risks (often including death), confirmed the patient&apos;s understanding, offered alternatives, and addressed reversible factors like pain, intoxication, and undertreated psychiatric symptoms.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
