@@ -409,7 +409,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            The discharge summary is always completed by the attending. Doorstep is meant as a checklist for the cross-covering or night physician &mdash; a structured prompt at the moment of the AMA encounter, before the formal note gets written.
+            The discharge summary is typically completed by the attending. Doorstep is meant as a checklist for the cross-covering or night physician &mdash; a structured prompt at the moment of the AMA encounter, before the formal note gets written.
           </p>
           <a href="https://doorstep.floviken.se" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
