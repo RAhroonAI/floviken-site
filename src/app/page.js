@@ -396,20 +396,10 @@ export default function Home() {
             fontSize: '1rem',
             lineHeight: '1.7',
             color: '#4a4a4a',
-            marginBottom: '1rem',
-            marginTop: 0,
-          }}>
-            Doorstep is a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, a curated risk library, and no language model in the stack. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
-          </p>
-          <p style={{
-            fontFamily: '"Georgia", serif',
-            fontSize: '1rem',
-            lineHeight: '1.7',
-            color: '#4a4a4a',
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            The discharge summary is typically completed by the attending. Doorstep is meant as a checklist for the cross-covering or night physician &mdash; a structured prompt at the moment of the AMA encounter, before the formal note gets written.
+            Doorstep is a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, a curated risk library, and no language model in the stack. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
           </p>
           <a href="https://doorstep.floviken.se" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
