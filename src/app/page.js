@@ -524,7 +524,7 @@ export default function Home() {
             marginBottom: '0.75rem',
             marginTop: 0,
           }}>
-            An experiment in chart review for incidental findings
+            An experiment in surfacing imaging follow-up at discharge
           </h2>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -534,7 +534,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Incidental findings on inpatient imaging &mdash; pulmonary nodules, adrenal masses, thyroid lesions &mdash; are routinely documented by radiologists and routinely lost in the focus on the acute problem. Published follow-up rates for clinically significant incidentals frequently sit between thirty and sixty percent.
+            Most clinical AI work in imaging focuses on detection &mdash; helping radiologists identify findings on the scan itself. Far less attention goes to what happens after the radiologist documents an incidental finding. The recommendation is often right there in the report. It just doesn&apos;t always make it into the discharge plan, the problem list, or the follow-up loop.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -544,7 +544,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Margin asks a narrow question. Given a chest CT report and a discharge summary, can a language model reliably identify whether a documented pulmonary nodule was appropriately addressed in the discharge plan?
+            Incidental findings on inpatient imaging &mdash; pulmonary nodules, adrenal masses, thyroid lesions &mdash; are routinely documented and routinely lost in the focus on the acute problem. Published follow-up rates for clinically significant incidentals frequently sit between thirty and sixty percent. Even when the radiologist explicitly recommends follow-up in the report, the recommendation often fails to reach the discharge plan. Chart review tends to focus on missed primary diagnoses, the findings that move billing and quality metrics. Incidental findings that won&apos;t change the index admission, but will matter six months later, get less scrutiny.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -554,7 +554,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            The experiment uses thirty fully synthetic charts, generated and locked to known ground truth, then reviewed by a separate model session with no memory of the construction. The point is not a statistically rigorous finding. The point is a reusable methodology: a prompt, a set of cases, a scoring approach, and an honest report of where the model succeeded and where it failed. A recipe, not a result.
+            Margin asks a narrow question. Could a language model reliably extract the radiologist&apos;s documented follow-up recommendations from a CT report, so a hospitalist could see them as a checklist at the moment of discharge?
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -564,7 +564,17 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            All synthetic cases, prompts, and code will be published openly when the room ships.
+            The clinician decides what to do with each finding. The model only surfaces what the radiologist already flagged.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            This room is a concept under development. The intended build evaluates the extraction layer against a corpus of publicly available CT reports with annotated ground truth, then wraps the validated extraction in a simple interface. A prototype, not a clinical tool. A recipe for what such a tool could be.
           </p>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
