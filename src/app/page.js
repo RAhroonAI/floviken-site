@@ -71,31 +71,299 @@ export default function Home() {
         </div>
 
         <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1rem',
-          marginBottom: '2.5rem',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '12px',
+          padding: '2rem 0',
+          marginBottom: '1.5rem',
         }}>
-          <div style={{ height: '1px', backgroundColor: '#d8d2c5', flex: 1 }} />
-          <p style={{
-            fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: '0.75rem',
-            letterSpacing: '0.2em',
-            color: '#8a8a8a',
-            textTransform: 'uppercase',
-            margin: 0,
+
+          <a className="lab-tile" href="#ghost-signout" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#1a2533',
           }}>
-            Experiments
-          </p>
-          <div style={{ height: '1px', backgroundColor: '#d8d2c5', flex: 1 }} />
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <rect x="0" y="120" width="200" height="80" fill="#0f1822" />
+                <rect x="80" y="60" width="40" height="80" fill="#c8d6e6" opacity="0.12" />
+                <circle cx="100" cy="100" r="4" fill="#c8d6e6" opacity="0.5" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#d8e3ef',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>01</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Ghost Signout</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                The morning handoff, and what it doesn&apos;t see.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#d8e3ef',
+            }}>Live</div>
+          </a>
+
+          <a className="lab-tile" href="#foldspace" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#15212e',
+          }}>
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <circle cx="60" cy="80" r="14" fill="#5dcaa5" opacity="0.4" />
+                <circle cx="100" cy="110" r="10" fill="#9fe1cb" opacity="0.5" />
+                <circle cx="135" cy="75" r="12" fill="#5dcaa5" opacity="0.35" />
+                <circle cx="155" cy="125" r="8" fill="#9fe1cb" opacity="0.45" />
+                <line x1="60" y1="80" x2="100" y2="110" stroke="#5dcaa5" strokeWidth="1" opacity="0.5" />
+                <line x1="100" y1="110" x2="135" y2="75" stroke="#5dcaa5" strokeWidth="1" opacity="0.5" />
+                <line x1="100" y1="110" x2="155" y2="125" stroke="#5dcaa5" strokeWidth="1" opacity="0.5" />
+                <line x1="135" y1="75" x2="155" y2="125" stroke="#5dcaa5" strokeWidth="1" opacity="0.4" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#b8e6d3',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>02</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Foldspace</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                A drug-target briefing in 60 seconds.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#b8e6d3',
+            }}>Live</div>
+          </a>
+
+          <a className="lab-tile" href="#lowfire" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#2a1812',
+          }}>
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <circle cx="100" cy="100" r="70" fill="none" stroke="#d85a30" strokeWidth="0.5" opacity="0.4" />
+                <line x1="100" y1="100" x2="100" y2="40" stroke="#f5c4b3" strokeWidth="1" opacity="0.7" />
+                <line x1="100" y1="100" x2="155" y2="120" stroke="#d85a30" strokeWidth="1.5" opacity="0.85" />
+                <circle cx="100" cy="100" r="3" fill="#f5c4b3" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#f5c4b3',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>03</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Lowfire</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                The 60-minute window.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#f5c4b3',
+            }}>Live</div>
+          </a>
+
+          <a className="lab-tile" href="#doorstep" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#2B2520',
+          }}>
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <rect x="115" y="50" width="50" height="120" fill="#F2D88A" opacity="0.85" />
+                <rect x="113" y="48" width="2" height="124" fill="#0E0C0A" />
+                <rect x="165" y="48" width="2" height="124" fill="#0E0C0A" />
+                <rect x="113" y="48" width="54" height="2" fill="#0E0C0A" />
+                <polygon points="115,170 165,170 185,200 95,200" fill="#F2D88A" opacity="0.25" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#F2EEDF',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>04</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Doorstep</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                A safer way to work through the AMA discharge.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#F2D88A',
+            }}>Live</div>
+          </a>
+
+          <a className="lab-tile" href="#sundown" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#2a1f3a',
+          }}>
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <rect x="0" y="130" width="200" height="70" fill="#1a1326" />
+                <circle cx="100" cy="130" r="36" fill="#EF9F27" opacity="0.55" />
+                <line x1="0" y1="130" x2="200" y2="130" stroke="#EF9F27" strokeWidth="0.5" opacity="0.4" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#d4c8e8',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>05</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Sundown</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                Cross-cover at midnight.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#d4c8e8',
+            }}>In progress</div>
+          </a>
+
+          <a className="lab-tile" href="#margin" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#f1ede3',
+          }}>
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <line x1="40" y1="80" x2="170" y2="80" stroke="#5f5e5a" strokeWidth="0.4" opacity="0.5" />
+                <line x1="40" y1="100" x2="170" y2="100" stroke="#5f5e5a" strokeWidth="0.4" opacity="0.5" />
+                <line x1="40" y1="120" x2="170" y2="120" stroke="#5f5e5a" strokeWidth="0.4" opacity="0.5" />
+                <line x1="40" y1="140" x2="140" y2="140" stroke="#5f5e5a" strokeWidth="0.4" opacity="0.5" />
+                <circle cx="160" cy="115" r="6" fill="none" stroke="#A32D2D" strokeWidth="1.5" />
+                <line x1="160" y1="115" x2="175" y2="100" stroke="#A32D2D" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#2c2c2a',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>06</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Margin</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                What the radiologist flagged. What discharge missed.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#5f5e5a',
+            }}>In progress</div>
+          </a>
+
+          <a className="lab-tile" href="#daybreak" style={{
+            aspectRatio: '1 / 1',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            position: 'relative',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, serif',
+            textDecoration: 'none',
+            display: 'block',
+            background: '#d8e3ef',
+          }}>
+            <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+              <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <rect x="0" y="140" width="200" height="60" fill="#b8c9d9" />
+                <circle cx="160" cy="140" r="22" fill="#FAEEDA" opacity="0.9" />
+                <line x1="0" y1="140" x2="200" y2="140" stroke="#7a8fa3" strokeWidth="0.4" />
+              </svg>
+            </div>
+            <div style={{
+              width: '100%', height: '100%', padding: '16px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', boxSizing: 'border-box', color: '#2c3e50',
+            }}>
+              <div>
+                <div style={{ fontSize: '10px', letterSpacing: '1.8px', opacity: 0.7, textTransform: 'uppercase' }}>07</div>
+                <div style={{ fontSize: '18px', fontWeight: 500, letterSpacing: '0.3px', marginTop: '4px' }}>Daybreak</div>
+              </div>
+              <div style={{ fontStyle: 'italic', fontSize: '12px', opacity: 0.85, lineHeight: 1.35 }}>
+                The hour before rounds.
+              </div>
+            </div>
+            <div style={{
+              position: 'absolute', top: '12px', right: '12px',
+              fontSize: '9px', letterSpacing: '1.5px', opacity: 0.55,
+              textTransform: 'uppercase', color: '#5f6e7d',
+            }}>In progress</div>
+          </a>
+
         </div>
 
         {/* #1 Ghost Signout */}
-        <div style={{
+        <div id="ghost-signout" style={{
           borderTop: '1px solid #e8e2d5',
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '1.5rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -180,10 +448,11 @@ export default function Home() {
         </div>
 
         {/* #2 Foldspace */}
-        <div style={{
+        <div id="foldspace" style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '1.5rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -258,10 +527,11 @@ export default function Home() {
         </div>
 
         {/* #3 Lowfire */}
-        <div style={{
+        <div id="lowfire" style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '1.5rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -346,10 +616,11 @@ export default function Home() {
         </div>
 
         {/* #4 Doorstep */}
-        <div style={{
+        <div id="doorstep" style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '1.5rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -434,10 +705,11 @@ export default function Home() {
         </div>
 
         {/* #5 Sundown */}
-        <div style={{
+        <div id="sundown" style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '1.5rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -511,10 +783,11 @@ export default function Home() {
         </div>
 
         {/* #6 Margin */}
-        <div style={{
+        <div id="margin" style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '1.5rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -598,10 +871,11 @@ export default function Home() {
         </div>
 
         {/* #7 Daybreak */}
-        <div style={{
+        <div id="daybreak" style={{
           borderBottom: '1px solid #e8e2d5',
           padding: '2rem 0',
           marginBottom: '4rem',
+          scrollMarginTop: '1.5rem',
         }}>
           <p style={{
             fontFamily: '"Inter", -apple-system, sans-serif',

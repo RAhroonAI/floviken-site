@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.lab-tile {
+  transition: transform 0.15s;
+}
+.lab-tile:hover {
+  transform: translateY(-2px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
