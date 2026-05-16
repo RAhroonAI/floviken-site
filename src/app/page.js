@@ -379,7 +379,7 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            A patient leaving against medical advice (AMA) is one of the highest-risk discharges in inpatient medicine. The widely held belief is that a signed AMA form is sufficient legal and clinical protection. On its own, it isn&apos;t. The signed form is necessary but not the load-bearing piece. What matters is whether the chart shows the physician assessed decision-making capacity, named the specific risks (often including death), confirmed the patient&apos;s understanding, offered alternatives, and addressed reversible factors like pain, intoxication, and undertreated psychiatric symptoms.
+            A patient leaving against medical advice is making a high-stakes decision, often under conditions that compromise their ability to make it. Pain, intoxication, undertreated psychiatric symptoms, financial pressure, family dynamics, fear. The careful encounter is the one where the clinician assesses decision-making capacity, names the specific risks including death, confirms the patient&apos;s understanding, offers alternatives, and addresses the reversible factors that might be driving the refusal. Sometimes that conversation changes the patient&apos;s decision and they stay. Sometimes it confirms a decision the clinician then respects.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -389,7 +389,17 @@ export default function Home() {
             marginBottom: '1rem',
             marginTop: 0,
           }}>
-            Almost none of that gets captured fully in real time, especially in middle-of-the-night encounters where the patient is agitated or refusing to engage. The gap isn&apos;t physician knowledge. Most of us know what should be documented. The gap is capture, because there&apos;s no structured prompt at the moment the encounter is actually happening.
+            The widely held belief is that a signed AMA form is sufficient clinical and legal protection. On its own, it isn&apos;t. The signed form is necessary but not the load-bearing piece. The load-bearing piece is whether the assessment actually happened &mdash; and whether the chart reflects that it did. Patient safety and chart integrity are the same thing in an AMA encounter. The work that protects the patient is the same work that produces a durable record of what was done.
+          </p>
+          <p style={{
+            fontFamily: '"Georgia", serif',
+            fontSize: '1rem',
+            lineHeight: '1.7',
+            color: '#4a4a4a',
+            marginBottom: '1rem',
+            marginTop: 0,
+          }}>
+            Almost none of that gets captured fully in real time, especially in middle-of-the-night encounters where the patient is agitated or refusing to engage. The gap isn&apos;t physician knowledge. Most hospitalists know what should be assessed. The gap is structured capture at the moment the encounter is actually happening, when the clinician is also managing a busy service and the conversation is moving fast.
           </p>
           <p style={{
             fontFamily: '"Georgia", serif',
@@ -399,7 +409,7 @@ export default function Home() {
             marginBottom: '1.25rem',
             marginTop: 0,
           }}>
-            Doorstep is a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, a curated risk library, and no language model in the stack. The output is a chart-ready note that captures what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
+            Doorstep is a small documentation checklist tool that walks a physician through the variables that matter for an AMA encounter &mdash; capacity, named risks, alternatives offered, reversible factors addressed. Structured fields, a curated risk library, and no language model in the stack. The output is a chart-ready note that reflects what was actually assessed, not just that the form was signed.
           </p>
           <a href="https://doorstep.floviken.se" target="_blank" rel="noopener noreferrer" style={{
             fontFamily: '"Inter", -apple-system, sans-serif',
@@ -419,7 +429,7 @@ export default function Home() {
             marginTop: '0.75rem',
             marginBottom: 0,
           }}>
-            Demonstration only. Live at doorstep.floviken.se.
+            The signed form proves the patient signed something. The structured note proves the clinician did the work. Built from public guidelines and synthetic cases. Not deployed in any clinical setting. Demonstration only. Live at doorstep.floviken.se.
           </p>
         </div>
 
