@@ -55,17 +55,23 @@ export default function Home() {
         <a className="tile" href="/about" style={{ ...tileBase, background: '#F1ECDE' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
-              <rect x="34" y="58" width="132" height="58" fill="none" stroke="#5A5142" strokeWidth="1.2" />
-              <line x1="34" y1="87" x2="166" y2="87" stroke="#5A5142" strokeWidth="0.7" />
-              <line x1="90" y1="87" x2="90" y2="116" stroke="#5A5142" strokeWidth="0.7" />
-              <line x1="130" y1="87" x2="130" y2="116" stroke="#5A5142" strokeWidth="0.7" />
-              <circle cx="62" cy="74" r="1.4" fill="#5A5142" />
-              <text x="62" y="80" fontFamily="Georgia, serif" fontStyle="italic" fontSize="7" fill="#5A5142" textAnchor="middle">desk</text>
-              <text x="62" y="106" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">notes</text>
-              <text x="110" y="106" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">bench</text>
-              <text x="148" y="106" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">stack</text>
-              <text x="100" y="50" fontFamily="Georgia, serif" fontStyle="italic" fontSize="9" fill="#5A5142" textAnchor="middle" letterSpacing="1.5">plan</text>
-              <line x1="80" y1="54" x2="120" y2="54" stroke="#5A5142" strokeWidth="0.3" />
+              <g transform="translate(0, -18)">
+                <rect x="34" y="58" width="132" height="100" fill="none" stroke="#5A5142" strokeWidth="1.2" />
+                <line x1="34" y1="90" x2="166" y2="90" stroke="#5A5142" strokeWidth="0.7" />
+                <line x1="90" y1="90" x2="90" y2="158" stroke="#5A5142" strokeWidth="0.7" />
+                <line x1="130" y1="90" x2="130" y2="158" stroke="#5A5142" strokeWidth="0.7" />
+                <line x1="34" y1="125" x2="90" y2="125" stroke="#5A5142" strokeWidth="0.7" />
+                <line x1="60" y1="158" x2="68" y2="158" stroke="#F1ECDE" strokeWidth="2.5" />
+                <line x1="60" y1="158" x2="68" y2="150" stroke="#5A5142" strokeWidth="0.6" />
+                <circle cx="62" cy="74" r="1.4" fill="#5A5142" />
+                <text x="62" y="80" fontFamily="Georgia, serif" fontStyle="italic" fontSize="7" fill="#5A5142" textAnchor="middle">desk</text>
+                <text x="62" y="111" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">notes</text>
+                <text x="62" y="143" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">archive</text>
+                <text x="110" y="125" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">bench</text>
+                <text x="148" y="125" fontFamily="Georgia, serif" fontStyle="italic" fontSize="6.5" fill="#5A5142" textAnchor="middle">stack</text>
+                <text x="100" y="50" fontFamily="Georgia, serif" fontStyle="italic" fontSize="9" fill="#5A5142" textAnchor="middle" letterSpacing="1.5">plan</text>
+                <line x1="80" y1="54" x2="120" y2="54" stroke="#5A5142" strokeWidth="0.3" />
+              </g>
             </svg>
           </div>
           <div style={{ ...innerBase, color: '#2C2C2A' }}>
