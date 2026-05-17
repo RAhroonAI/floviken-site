@@ -1,0 +1,30 @@
+{
+  "name": "Floviken",
+  "short_name": "Floviken",
+  "description": "Experiments in AI and medicine.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F1ECDE",
+  "theme_color": "#F1ECDE",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
