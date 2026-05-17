@@ -218,6 +218,35 @@ export default function Home() {
           <div style={{ ...statusBase, color: '#5f6e7d' }}>In progress</div>
         </a>
 
+        <a className="tile" href="/signal" style={{ ...tileBase, background: '#14323A' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+              <rect x="0" y="135" width="200" height="65" fill="#0B2228" />
+              <line x1="0" y1="135" x2="200" y2="135" stroke="#1E4750" strokeWidth="0.4" />
+              <polygon points="44,135 50,75 60,75 66,135" fill="#0B2228" stroke="#5D8189" strokeWidth="0.6" />
+              <rect x="48" y="55" width="14" height="22" fill="#0B2228" stroke="#5D8189" strokeWidth="0.6" />
+              <rect x="46" y="50" width="18" height="5" fill="#0B2228" stroke="#5D8189" strokeWidth="0.5" />
+              <polygon points="46,50 55,40 64,50" fill="#0B2228" stroke="#5D8189" strokeWidth="0.5" />
+              <circle cx="55" cy="65" r="3" fill="#F2D88A" opacity="0.95" />
+              <circle cx="55" cy="65" r="6" fill="#F2D88A" opacity="0.35" />
+              <circle cx="55" cy="65" r="11" fill="#F2D88A" opacity="0.12" />
+              <polygon points="58,62 200,30 200,98 58,68" fill="#F2D88A" opacity="0.18" />
+              <polygon points="58,63 200,45 200,85 58,67" fill="#F2D88A" opacity="0.1" />
+              <line x1="0" y1="145" x2="200" y2="145" stroke="#1E4750" strokeWidth="0.3" opacity="0.6" />
+              <line x1="0" y1="158" x2="200" y2="158" stroke="#1E4750" strokeWidth="0.3" opacity="0.5" />
+              <line x1="0" y1="172" x2="200" y2="172" stroke="#1E4750" strokeWidth="0.3" opacity="0.4" />
+              <line x1="0" y1="186" x2="200" y2="186" stroke="#1E4750" strokeWidth="0.3" opacity="0.3" />
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#D6E3E6' }}>
+            <div>
+              <div style={{ ...tagStyle, color: '#F2D88A' }}>&middot;</div>
+              <div style={nameStyle}>Send a signal</div>
+            </div>
+            <div style={{ ...lineStyle, color: '#B8CDD1' }}>Working on something nearby? Let&apos;s talk.</div>
+          </div>
+        </a>
+
       </div>
     </main>
   );
