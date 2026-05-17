@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Daybreak — Floviken",
-  description: "The hour before rounds: balanced morning hospitalist assignments in two seconds.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("daybreak");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -53,15 +53,9 @@ export default function Daybreak() {
       <p style={paragraph}>
         Synthetic data only. No EHR integration. A prototype, not a clinical tool. The point is to show that an hour of pre-shift labor could be a button.
       </p>
-      <p style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.875rem',
-        color: '#8a8a8a',
-        marginBottom: 0,
-        marginTop: 0,
-      }}>
-        In progress
-      </p>
+
+      <ClosingTile slug="daybreak" />
+      <BackLink />
     </article>
   );
 }

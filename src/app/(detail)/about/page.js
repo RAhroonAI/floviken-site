@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "About — Floviken",
-  description: "Richard Ahroon, hospitalist and biomedical engineer, on the lab and the clinician behind it.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("about");
 
 export default function About() {
   return (
@@ -33,9 +33,12 @@ export default function About() {
           I build small clinical AI experiments exploring common hospitalist workflow questions &mdash; handoff structure, time-critical decision support, high-risk encounter documentation. Built from public guidelines and synthetic cases. Independent projects, not deployed in any clinical setting.
         </p>
         <p style={{ margin: 0 }}>
-          If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you at <a href="mailto:richard@floviken.se" style={{ color: '#3a3a3a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>richard@floviken.se</a>.
+          If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you.
         </p>
       </div>
+
+      <ClosingTile slug="about" />
+      <BackLink />
     </article>
   );
 }

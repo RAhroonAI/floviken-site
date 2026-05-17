@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Lowfire — Floviken",
-  description: "The 60-minute window for empiric antibiotics in neutropenic fever.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("lowfire");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -44,29 +44,22 @@ export default function Lowfire() {
       <p style={paragraph}>
         Lowfire is a small experiment in what comes after the alert. A deterministic algorithm encodes the IDSA / ASCO guideline and produces the orders &mdash; antibiotic class, cultures, ancillary, monitoring. An AI then voices the recommendation as a hospitalist colleague would. The clinician signs or overrides.
       </p>
-      <p style={{ ...paragraph, marginBottom: '1.25rem' }}>
+      <p style={paragraph}>
         The architectural commitment is that the recommendation never comes from the AI. The algorithm is the source of truth. Claude only handles the language. Antibiotic names are redacted to drug class with no dosing recommendations, so there can be no confusion that this is anything but a prototype. Same shape as Foldspace, applied to actionable orders this time.
       </p>
-      <a href="https://lowfire.floviken.se" target="_blank" rel="noopener noreferrer" style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.9375rem',
-        color: '#2a332a',
-        textDecoration: 'none',
-        borderBottom: '1px solid #2a332a',
-        paddingBottom: '1px',
-      }}>
-        Try it &rarr;
-      </a>
       <p style={{
         fontFamily: '"Georgia", serif',
         fontSize: '0.875rem',
         fontStyle: 'italic',
         color: '#8a8a8a',
-        marginTop: '0.75rem',
+        marginTop: 0,
         marginBottom: 0,
       }}>
-        Demonstration only. Live at lowfire.floviken.se.
+        Demonstration only.
       </p>
+
+      <ClosingTile slug="lowfire" />
+      <BackLink />
     </article>
   );
 }

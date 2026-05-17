@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Ghost Signout — Floviken",
-  description: "The morning handoff, and what it doesn't see.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("ghost-signout");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -44,29 +44,22 @@ export default function GhostSignout() {
       <p style={paragraph}>
         Ghost Signout is a small prototype I built that captures these events using structured fields during a hypothetical shift, then generates a clean morning document a day team could scan in 30 seconds. The categories are the ones that actually disappear: Expired, Inpatient Hospice, AMA, Transfer Out, Admit &amp; Discharge, and Critical Follow-up.
       </p>
-      <p style={{ ...paragraph, marginBottom: '1.25rem' }}>
+      <p style={paragraph}>
         The capture pattern is intentionally simple, with six taps, structured fields, and an AI-generated summary, so it could live as a standalone tool or as a module inside an existing EHR workflow.
       </p>
-      <a href="https://ghost-signout.vercel.app/capture" target="_blank" rel="noopener noreferrer" style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.9375rem',
-        color: '#2a332a',
-        textDecoration: 'none',
-        borderBottom: '1px solid #2a332a',
-        paddingBottom: '1px',
-      }}>
-        Try it &rarr;
-      </a>
       <p style={{
         fontFamily: '"Georgia", serif',
         fontSize: '0.875rem',
         fontStyle: 'italic',
         color: '#8a8a8a',
-        marginTop: '0.75rem',
+        marginTop: 0,
         marginBottom: 0,
       }}>
-        Synthetic data only. Currently a single-user prototype. Live at ghost-signout.vercel.app/capture.
+        Synthetic data only. Currently a single-user prototype.
       </p>
+
+      <ClosingTile slug="ghost-signout" />
+      <BackLink />
     </article>
   );
 }

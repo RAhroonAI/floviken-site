@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Foldspace — Floviken",
-  description: "A clinician's drug-target briefing in 60 seconds.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("foldspace");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -41,29 +41,22 @@ export default function Foldspace() {
       <p style={paragraph}>
         The experiment: type a UniProt ID, get a one-page clinical briefing in 60 seconds &mdash; function, clinical relevance, approved drugs, structural confidence. The data comes from those three sources, fetched live every time. AI writes the language; the data is never recalled from training. The model isn&apos;t the source. It&apos;s the translator.
       </p>
-      <p style={{ ...paragraph, marginBottom: '1.25rem' }}>
+      <p style={paragraph}>
         It&apos;s a small attempt at what data integrity might look like as AI enters clinical and pharmacological workflows.
       </p>
-      <a href="https://foldspace.floviken.se" target="_blank" rel="noopener noreferrer" style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.9375rem',
-        color: '#2a332a',
-        textDecoration: 'none',
-        borderBottom: '1px solid #2a332a',
-        paddingBottom: '1px',
-      }}>
-        Try it &rarr;
-      </a>
       <p style={{
         fontFamily: '"Georgia", serif',
         fontSize: '0.875rem',
         fontStyle: 'italic',
         color: '#8a8a8a',
-        marginTop: '0.75rem',
+        marginTop: 0,
         marginBottom: 0,
       }}>
-        Demonstration only. Live at foldspace.floviken.se.
+        Demonstration only.
       </p>
+
+      <ClosingTile slug="foldspace" />
+      <BackLink />
     </article>
   );
 }

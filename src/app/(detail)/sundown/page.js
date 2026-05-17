@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Sundown — Floviken",
-  description: "Cross-cover at midnight: a one-screen workup for overnight delirium pages.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("sundown");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -47,15 +47,9 @@ export default function Sundown() {
       <p style={paragraph}>
         Same shape as Lowfire and Foldspace. The chart and the references are the source of truth &mdash; Beers criteria, the anticholinergic burden calculator, AAFP and StatPearls workup standards. AI handles the language only. The clinician examines the patient and decides what matters.
       </p>
-      <p style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.875rem',
-        color: '#8a8a8a',
-        marginBottom: 0,
-        marginTop: 0,
-      }}>
-        In progress
-      </p>
+
+      <ClosingTile slug="sundown" />
+      <BackLink />
     </article>
   );
 }

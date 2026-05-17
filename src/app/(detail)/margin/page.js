@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Margin — Floviken",
-  description: "Surfacing imaging follow-up at discharge: what the radiologist flagged, what discharge missed.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("margin");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -50,15 +50,9 @@ export default function Margin() {
       <p style={paragraph}>
         This room is a concept under development. The intended build evaluates the extraction layer against a corpus of publicly available CT reports with annotated ground truth, then wraps the validated extraction in a simple interface. A prototype, not a clinical tool. A recipe for what such a tool could be.
       </p>
-      <p style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.875rem',
-        color: '#8a8a8a',
-        marginBottom: 0,
-        marginTop: 0,
-      }}>
-        In progress
-      </p>
+
+      <ClosingTile slug="margin" />
+      <BackLink />
     </article>
   );
 }

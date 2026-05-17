@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Doorstep — Floviken",
-  description: "A safer way to work through the AMA discharge.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("doorstep");
 
 const paragraph = {
   fontFamily: '"Georgia", serif',
@@ -44,29 +44,22 @@ export default function Doorstep() {
       <p style={paragraph}>
         Almost none of that gets captured fully in real time, especially in middle-of-the-night encounters where the patient is agitated or refusing to engage. The gap isn&apos;t physician knowledge. Most of us know what should be assessed. The gap is capture, because there&apos;s no structured prompt at the moment the encounter is actually happening.
       </p>
-      <p style={{ ...paragraph, marginBottom: '1.25rem' }}>
+      <p style={paragraph}>
         Doorstep is a small documentation tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, a curated risk library, and no language model in the stack. The output is a short chart-ready note a discharge summary can build on later &mdash; capturing what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
       </p>
-      <a href="https://doorstep.floviken.se" target="_blank" rel="noopener noreferrer" style={{
-        fontFamily: '"Inter", -apple-system, sans-serif',
-        fontSize: '0.9375rem',
-        color: '#2a332a',
-        textDecoration: 'none',
-        borderBottom: '1px solid #2a332a',
-        paddingBottom: '1px',
-      }}>
-        Try it &rarr;
-      </a>
       <p style={{
         fontFamily: '"Georgia", serif',
         fontSize: '0.875rem',
         fontStyle: 'italic',
         color: '#8a8a8a',
-        marginTop: '0.75rem',
+        marginTop: 0,
         marginBottom: 0,
       }}>
-        Demonstration only. Live at doorstep.floviken.se.
+        Demonstration only.
       </p>
+
+      <ClosingTile slug="doorstep" />
+      <BackLink />
     </article>
   );
 }

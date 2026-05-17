@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Send a signal — Floviken",
-  description: "Working on something nearby in clinical AI? Let's talk.",
-};
+import { tileMetadata } from "@/app/_components/tile-data";
+import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+
+export const metadata = tileMetadata("signal");
 
 export default function Signal() {
   return (
@@ -27,6 +27,9 @@ export default function Signal() {
           I&apos;m interested in hearing from clinicians, researchers, and builders working at the intersection of medicine and AI &mdash; particularly hospitalist workflow, clinical decision support, and drug discovery. If something here resonates with what you&apos;re doing, send a signal.
         </p>
       </div>
+
+      <ClosingTile slug="signal" />
+      <BackLink />
     </article>
   );
 }
