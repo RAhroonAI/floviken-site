@@ -55,7 +55,7 @@ export default function Home() {
         <a className="tile" href="/about" style={{ ...tileBase, background: '#F1ECDE' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
-              <g transform="translate(0, -18)">
+              <g transform="translate(0, -8)">
                 <rect x="34" y="58" width="132" height="100" fill="none" stroke="#5A5142" strokeWidth="1.2" />
                 <line x1="34" y1="90" x2="166" y2="90" stroke="#5A5142" strokeWidth="0.7" />
                 <line x1="90" y1="90" x2="90" y2="158" stroke="#5A5142" strokeWidth="0.7" />
