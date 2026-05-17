@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "floviken-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/richardahroon/Desktop/Richard and Lauren Ahroon/Floviken Projects/floviken-site",
+      "port": 3000
+    }
+  ]
+}
