@@ -23,13 +23,8 @@ export default function Signal() {
         lineHeight: '1.7',
         color: '#3a3a3a',
       }}>
-        <p style={{ margin: '0 0 1.5rem 0' }}>
-          I&apos;m interested in hearing from clinicians, researchers, and builders working at the intersection of medicine and AI &mdash; particularly hospitalist workflow, clinical decision support, and drug discovery. If something here resonates with what you&apos;re doing, send a signal.
-        </p>
         <p style={{ margin: 0 }}>
-          <a href="mailto:richard@floviken.se" style={{ color: '#3a3a3a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>
-            richard@floviken.se
-          </a>
+          I&apos;m interested in hearing from clinicians, researchers, and builders working at the intersection of medicine and AI &mdash; particularly hospitalist workflow, clinical decision support, and drug discovery. If something here resonates with what you&apos;re doing, send a signal.
         </p>
       </div>
     </article>
