@@ -47,6 +47,9 @@ export default function Doorstep() {
       <p style={paragraph}>
         Doorstep is a small documentation tool that walks a physician through the variables that matter for an AMA encounter, with structured fields, a curated risk library, and no language model in the stack. The output is a short chart-ready note a discharge summary can build on later &mdash; capturing what was actually assessed, not just that the form was signed. Built from public guidelines and synthetic cases. Not deployed in any clinical setting.
       </p>
+      <p style={paragraph}>
+        The deliberate choice in this experiment is the absence of a language model. The right tool for AMA discharge documentation is not generative AI &mdash; it is a structured checklist and a curated risk library. The argument goes back to Atul Gawande: in high-stakes, high-complexity work where experts under cognitive load skip steps they know are critical, a checklist outperforms further training. AMA discharge is exactly this kind of work. The failure mode is not knowledge &mdash; it is capture under load. The right intervention is a forcing function, not a synthesis engine. Doorstep is built on that premise. It exists to show that knowing when not to use AI is part of building clinical AI well.
+      </p>
       <p style={{
         fontFamily: '"Georgia", serif',
         fontSize: '0.875rem',
