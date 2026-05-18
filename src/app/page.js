@@ -83,6 +83,35 @@ export default function Home() {
           </div>
         </a>
 
+        <a className="tile" href="mailto:richard@floviken.se" style={{ ...tileBase, background: '#B8C2B0' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+              <g transform="rotate(22 135 125)">
+                <ellipse cx="135" cy="105" rx="15" ry="21" fill="#2A2E26" stroke="#2A2E26" strokeWidth="1" />
+                <line x1="124" y1="97.5" x2="146" y2="97.5" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="123" y1="104" x2="147" y2="104" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="123" y1="110.5" x2="147" y2="110.5" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="124" y1="117" x2="146" y2="117" stroke="#B8C2B0" strokeWidth="0.5" />
+                <circle cx="135" cy="124" r="1.5" fill="#C25A3B" />
+                <rect x="130.5" y="128" width="9" height="5" fill="#2A2E26" />
+                <line x1="135" y1="133" x2="135" y2="165" stroke="#2A2E26" strokeWidth="1.2" strokeLinecap="round" />
+              </g>
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#2A2E26' }}>
+            <div>
+              <div style={{ ...tagStyle, color: '#4A5448' }}>&middot;</div>
+              <div style={nameStyle}>Speak up</div>
+            </div>
+            <div style={{ ...lineStyle, color: '#4A5448' }}>
+              Have a thought on any of this?
+              <br />
+              I&apos;d like to hear it.
+            </div>
+          </div>
+          <div style={{ ...statusBase, color: '#4A5448' }}>Open</div>
+        </a>
+
         <a className="tile" href="/ghost-signout" style={{ ...tileBase, background: '#1a2533' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
@@ -218,6 +247,33 @@ export default function Home() {
             <div style={lineStyle}>The hour before rounds.</div>
           </div>
           <div style={{ ...statusBase, color: '#5f6e7d' }}>In progress</div>
+        </a>
+
+        <a className="tile" href="/scribe" style={{ ...tileBase, background: '#B8C2B0' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+              <g transform="rotate(-8 140 135)">
+                <ellipse cx="140" cy="120" rx="21" ry="29" fill="#2A2E26" stroke="#2A2E26" strokeWidth="1" />
+                <line x1="124" y1="110" x2="156" y2="110" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="123" y1="117.5" x2="157" y2="117.5" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="123" y1="125" x2="157" y2="125" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="123" y1="132.5" x2="157" y2="132.5" stroke="#B8C2B0" strokeWidth="0.5" />
+                <line x1="124" y1="140" x2="156" y2="140" stroke="#B8C2B0" strokeWidth="0.5" />
+                <circle cx="140" cy="147.5" r="1.5" fill="#C25A3B" />
+                <rect x="132.5" y="152.5" width="15" height="6" fill="#2A2E26" />
+                <line x1="140" y1="158.5" x2="140" y2="185" stroke="#2A2E26" strokeWidth="1.2" strokeLinecap="round" />
+              </g>
+              <line x1="107.5" y1="189" x2="152.5" y2="189" stroke="#2A2E26" strokeWidth="1.2" strokeLinecap="round" />
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#2A2E26' }}>
+            <div>
+              <div style={{ ...tagStyle, color: '#4A5448' }}>08</div>
+              <div style={nameStyle}>Scribe</div>
+            </div>
+            <div style={{ ...lineStyle, color: '#4A5448' }}>The second view.</div>
+          </div>
+          <div style={{ ...statusBase, color: '#4A5448' }}>Position</div>
         </a>
 
         <a className="tile" href="/signal" style={{ ...tileBase, background: '#14323A' }}>
