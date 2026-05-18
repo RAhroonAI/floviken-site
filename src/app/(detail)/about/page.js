@@ -24,10 +24,10 @@ export default function About() {
         color: '#3a3a3a',
       }}>
         <p style={{ margin: '0 0 1rem 0' }}>
-          I&apos;m Richard Ahroon, a board-certified internist and US/Swedish dual citizen, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
+          I&apos;m Richard Ahroon, a board-certified internist and hospitalist, US/Swedish dual citizen, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
         </p>
         <p style={{ margin: '0 0 1rem 0' }}>
-          My day-to-day work is inpatient hospital medicine, including ICU-level care, increasingly mediated by AI-enabled tools &mdash; ambient documentation, clinical decision support, and alert systems for sepsis and deterioration. I&apos;ve seen firsthand where these tools help and where they fall short.
+          Inpatient hospital medicine is the work &mdash; admissions, cross-cover, ICU co-management, the full arc of an acute-care stay. It&apos;s also a field where AI-enabled tools &mdash; ambient documentation, clinical decision support, deterioration and sepsis alerting &mdash; have moved from pilots to routine infrastructure. The lab is where I think about that shift from the clinician&apos;s side.
         </p>
         <p style={{ margin: '0 0 1rem 0' }}>
           I build small clinical AI experiments exploring common hospitalist workflow questions &mdash; handoff structure, time-critical decision support, high-risk encounter documentation. Built from public guidelines and synthetic cases. Independent projects, not deployed in any clinical setting.
