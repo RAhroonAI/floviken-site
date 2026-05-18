@@ -181,6 +181,34 @@ export const tiles = {
     `,
   },
 
+  scribe: {
+    name: "Scribe",
+    oneLiner: "The second view.",
+    tag: "08 · POSITION",
+    verb: "Scribe.",
+    sub: "A position from the lab.",
+    href: null,
+    external: false,
+    bg: "#B8C2B0",
+    color: "#2A2E26",
+    tagColor: "#2A2E26",
+    subColor: "#4A5448",
+    glyph: `
+      <g transform="rotate(-8 280 270)">
+        <ellipse cx="280" cy="240" rx="42" ry="58" fill="#2A2E26" stroke="#2A2E26" stroke-width="2"/>
+        <line x1="248" y1="220" x2="312" y2="220" stroke="#B8C2B0" stroke-width="1"/>
+        <line x1="246" y1="235" x2="314" y2="235" stroke="#B8C2B0" stroke-width="1"/>
+        <line x1="246" y1="250" x2="314" y2="250" stroke="#B8C2B0" stroke-width="1"/>
+        <line x1="246" y1="265" x2="314" y2="265" stroke="#B8C2B0" stroke-width="1"/>
+        <line x1="248" y1="280" x2="312" y2="280" stroke="#B8C2B0" stroke-width="1"/>
+        <circle cx="280" cy="295" r="2.5" fill="#C25A3B"/>
+        <rect x="265" y="305" width="30" height="12" fill="#2A2E26"/>
+        <line x1="280" y1="317" x2="280" y2="370" stroke="#2A2E26" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <line x1="215" y1="378" x2="305" y2="378" stroke="#2A2E26" stroke-width="2" stroke-linecap="round"/>
+    `,
+  },
+
   signal: {
     name: "Send a signal",
     oneLiner: "Working on something nearby? Let’s talk.",
@@ -212,18 +240,19 @@ export const tiles = {
   },
 };
 
-export function tileMetadata(slug) {
+export function tileMetadata(slug, overrides = {}) {
   const t = tiles[slug];
   if (!t) return null;
   const url = `https://floviken.se/${slug}`;
   const ogImage = `https://floviken.se/og/${slug}.png`;
-  const title = `${t.name} — Floviken`;
+  const title = overrides.title || `${t.name} — Floviken`;
+  const description = overrides.description || t.oneLiner;
   return {
     title,
-    description: t.oneLiner,
+    description,
     openGraph: {
       title,
-      description: t.oneLiner,
+      description,
       url,
       siteName: "Floviken",
       type: "website",
@@ -232,7 +261,7 @@ export function tileMetadata(slug) {
     twitter: {
       card: "summary_large_image",
       title,
-      description: t.oneLiner,
+      description,
       images: [ogImage],
     },
   };

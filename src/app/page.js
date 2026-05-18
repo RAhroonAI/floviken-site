@@ -220,6 +220,33 @@ export default function Home() {
           <div style={{ ...statusBase, color: '#5f6e7d' }}>In progress</div>
         </a>
 
+        <a className="tile" href="/scribe" style={{ ...tileBase, background: '#B8C2B0' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+              <g transform="rotate(-8 115 110)">
+                <ellipse cx="115" cy="95" rx="26" ry="36" fill="#2A2E26" stroke="#2A2E26" strokeWidth="1.2" />
+                <line x1="95" y1="82" x2="135" y2="82" stroke="#B8C2B0" strokeWidth="0.9" />
+                <line x1="93" y1="92" x2="137" y2="92" stroke="#B8C2B0" strokeWidth="0.9" />
+                <line x1="93" y1="102" x2="137" y2="102" stroke="#B8C2B0" strokeWidth="0.9" />
+                <line x1="93" y1="112" x2="137" y2="112" stroke="#B8C2B0" strokeWidth="0.9" />
+                <line x1="95" y1="122" x2="135" y2="122" stroke="#B8C2B0" strokeWidth="0.9" />
+                <circle cx="115" cy="132" r="2" fill="#C25A3B" />
+                <rect x="106" y="138" width="18" height="7" fill="#2A2E26" />
+                <line x1="115" y1="145" x2="115" y2="178" stroke="#2A2E26" strokeWidth="1.5" strokeLinecap="round" />
+              </g>
+              <line x1="78" y1="183" x2="152" y2="183" stroke="#2A2E26" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#2A2E26' }}>
+            <div>
+              <div style={{ ...tagStyle, color: '#4A5448' }}>08</div>
+              <div style={nameStyle}>Scribe</div>
+            </div>
+            <div style={{ ...lineStyle, color: '#4A5448' }}>The second view.</div>
+          </div>
+          <div style={{ ...statusBase, color: '#4A5448' }}>Position</div>
+        </a>
+
         <a className="tile" href="/signal" style={{ ...tileBase, background: '#14323A' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
