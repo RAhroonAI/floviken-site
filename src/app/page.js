@@ -1,3 +1,17 @@
+export const metadata = {
+  alternates: { canonical: "https://floviken.se/" },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Richard Ahroon",
+  jobTitle: "Hospitalist and biomedical engineer",
+  url: "https://floviken.se",
+  description: "A physician building small AI tools for clinical problems.",
+  sameAs: ["https://www.linkedin.com/in/richard-ahroon-md/"],
+};
+
 const tileBase = {
   aspectRatio: '1 / 1',
   borderRadius: '12px',
@@ -40,6 +54,10 @@ export default function Home() {
       minHeight: '100vh',
       backgroundColor: '#faf7f2',
     }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',

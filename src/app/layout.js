@@ -1,10 +1,10 @@
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://floviken.se"),
   title: "Floviken — Experiments in AI and medicine",
-  description: "I'm Richard Ahroon, a hospitalist and biomedical engineer with active clinical practice in the US. I build small AI tools for clinical problems I personally encounter.",
-  keywords: ["Floviken", "Richard Ahroon", "AI in medicine", "clinical AI", "clinical informatics", "hospitalist", "builder MD"],
-  authors: [{ name: "Richard Ahroon", url: "https://Floviken.se" }],
+  description: "A physician's public laboratory for AI in medicine. Small, shipped clinical tools by Richard Ahroon, hospitalist and biomedical engineer.",
+  authors: [{ name: "Richard Ahroon", url: "https://floviken.se" }],
   applicationName: "Floviken",
   manifest: "/manifest.json",
   icons: {
@@ -21,11 +21,25 @@ export const metadata = {
   },
   openGraph: {
     title: "Floviken — Experiments in AI and medicine",
-    description: "A physician's public laboratory for AI in medicine. Small, shipped tools.",
-    url: "https://Floviken.se",
+    description: "A physician's public laboratory for AI in medicine. Small, shipped clinical tools by Richard Ahroon, hospitalist and biomedical engineer.",
+    url: "https://floviken.se",
     siteName: "Floviken",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://floviken.se/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Floviken — experiments in AI and medicine",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Floviken — Experiments in AI and medicine",
+    description: "A physician's public laboratory for AI in medicine. Small, shipped clinical tools by Richard Ahroon, hospitalist and biomedical engineer.",
+    images: ["https://floviken.se/og-image.png"],
   },
 };
 

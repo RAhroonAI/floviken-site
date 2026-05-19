@@ -250,6 +250,7 @@ export function tileMetadata(slug, overrides = {}) {
   return {
     title,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title,
       description,
