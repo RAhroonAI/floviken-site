@@ -30,7 +30,7 @@ export default function About() {
           Inpatient hospital medicine is the work &mdash; admissions, cross-cover, ICU co-management, the full arc of an acute-care stay. It&apos;s also a field where AI-enabled tools &mdash; ambient documentation, clinical decision support, deterioration and sepsis alerting &mdash; have moved from pilots to routine infrastructure. The lab is where I think about that shift from the clinician&apos;s side.
         </p>
         <p style={{ margin: '0 0 1rem 0' }}>
-          I build small clinical AI experiments exploring common hospitalist workflow questions &mdash; handoff structure, time-critical decision support, high-risk encounter documentation. Built from public guidelines and synthetic cases. Independent projects, not deployed in any clinical setting.
+          I build small clinical AI experiments exploring common hospitalist workflow questions &mdash; handoff structure, time-critical decision support, high-risk encounter documentation. Built from public guidelines and synthetic cases. Independent projects, not deployed in any clinical setting. Floviken is personal work, built on personal time, not affiliated with any employer or health system.
         </p>
         <p style={{ margin: 0 }}>
           If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you.
