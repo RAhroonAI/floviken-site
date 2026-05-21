@@ -111,7 +111,6 @@ export default function Home() {
               <g transform="translate(92 76) rotate(-8)">
                 <line x1="0" y1="-70" x2="0" y2="0" stroke="#2d4346" strokeWidth="1" />
                 <path d="M 2 -56 Q 22 -40 24 -16 L 2 -16 Z" fill="#2d4346" />
-                <path d="M -2 -62 Q -18 -44 -24 -16 L -2 -16 Z" fill="#2d4346" />
                 <path d="M -30 -8 Q -28 0 -22 4 L 22 4 Q 28 0 30 -8 Z" fill="#2d4346" />
                 <path d="M -3 4 L -4.5 13 Q -4 16 0 16 Q 4 16 4.5 13 L 3 4 Z" fill="#2d4346" />
               </g>
