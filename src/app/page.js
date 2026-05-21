@@ -101,6 +101,31 @@ export default function Home() {
           </div>
         </a>
 
+        <a className="tile" href="https://keel.floviken.se" style={{ ...tileBase, background: '#c8d5d7' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 160 130" preserveAspectRatio="xMidYMid meet" aria-label="A sailboat heeled to port with a fin keel below the waterline">
+              <line x1="0" y1="76" x2="160" y2="76" stroke="#2d4346" strokeWidth="0.4" strokeDasharray="3 3" />
+              <path d="M 0 88 Q 22 82 44 88 T 88 86 T 132 90 T 160 88" fill="none" stroke="#2d4346" strokeWidth="0.4" opacity="0.8" />
+              <path d="M 0 104 Q 35 98 70 104 T 140 102 T 160 106" fill="none" stroke="#2d4346" strokeWidth="0.3" opacity="0.55" />
+              <path d="M 0 118 Q 40 114 80 118 T 160 116" fill="none" stroke="#2d4346" strokeWidth="0.25" opacity="0.4" />
+              <g transform="translate(92 76) rotate(-8)">
+                <line x1="0" y1="-70" x2="0" y2="0" stroke="#2d4346" strokeWidth="1" />
+                <path d="M 2 -56 Q 22 -40 24 -16 L 2 -16 Z" fill="#2d4346" />
+                <path d="M -2 -62 Q -18 -44 -24 -16 L -2 -16 Z" fill="#2d4346" />
+                <path d="M -30 -8 Q -28 0 -22 4 L 22 4 Q 28 0 30 -8 Z" fill="#2d4346" />
+                <path d="M -3 4 L -4.5 13 Q -4 16 0 16 Q 4 16 4.5 13 L 3 4 Z" fill="#2d4346" />
+              </g>
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#2d4346' }}>
+            <div>
+              <div style={nameStyle}>Keel</div>
+            </div>
+            <div style={{ ...lineStyle, color: '#2d4346' }}>The chart underneath the rooms.</div>
+          </div>
+          <div style={{ ...statusBase, color: '#2d4346' }}>EMR</div>
+        </a>
+
         <a className="tile" href="/ghost-signout" style={{ ...tileBase, background: '#1a2533' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
