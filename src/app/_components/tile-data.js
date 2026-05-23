@@ -121,7 +121,7 @@ export const tiles = {
   sundown: {
     name: "Sundown",
     oneLiner: "Cross-cover at midnight.",
-    tag: "05 · IN PROGRESS",
+    tag: "06 · IN PROGRESS",
     verb: "After dusk.",
     sub: "This room is being built.",
     href: null,
@@ -141,10 +141,10 @@ export const tiles = {
   margin: {
     name: "Margin",
     oneLiner: "What the radiologist flagged. What the problem list missed.",
-    tag: "06 · IN PROGRESS",
+    tag: "05 · LIVE",
     verb: "In the margin.",
-    sub: "This room is being built.",
-    href: null,
+    sub: "What the radiologist flagged. What the problem list missed.",
+    href: "/margin",
     external: false,
     bg: "#f1ede3",
     color: "#2c2c2a",
