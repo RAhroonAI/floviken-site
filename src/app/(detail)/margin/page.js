@@ -17,6 +17,20 @@ const sectionLabel = {
   color: '#2a2a2a',
 };
 
+const bulletList = {
+  fontFamily: '"Georgia", serif',
+  fontSize: '1rem',
+  lineHeight: '1.7',
+  color: '#4a4a4a',
+  marginTop: 0,
+  marginBottom: '1rem',
+  paddingLeft: '1.5rem',
+};
+
+const bulletItem = {
+  marginBottom: '0.25rem',
+};
+
 const buttonRow = {
   textAlign: 'center',
   marginTop: '2.5rem',
@@ -70,22 +84,52 @@ export default function Margin() {
         Margin &mdash; surfacing radiology findings to the problem list
       </h1>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Background.</strong> Radiology reports document findings beyond the primary indication. Some are acted on during the admission; many are not. The active problem list, the structured field that carries forward through encounters and discharge documents, frequently lags behind the radiology impression. Findings remain in free-text fields, accessible by chart review but not surfaced for prospective review.
+        <strong style={sectionLabel}>Background.</strong> When a patient is admitted with an acute problem &mdash; heart failure, pneumonia, a bowel obstruction &mdash; the hospitalist&apos;s attention is pulled to that problem. Stabilizing the patient, managing complications, planning the discharge. Imaging gets ordered for the acute issue. The radiologist reads the study and may document additional findings unrelated to the reason for admission. A small adrenal nodule. Hepatic steatosis. A pulmonary nodule. These findings are real and clinically meaningful, but they&apos;re not the reason the patient is in the hospital.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Hypothesis.</strong> A language model with appropriate guardrails can extract structured proposals from a radiology report, identify which findings are not already represented on the active problem list, and present them for clinician verification. The clinician retains sole authority over the problem list. The agent&apos;s role is restricted to extraction, comparison, and surfacing.
+        The hospitalist has to notice them. They have to decide whether to add them to the active problem list so the outpatient team knows. Under the pressure of the acute admission and the volume of incoming data, this step can be missed. The finding stays in the radiology report. It never becomes a problem the chart carries forward.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Method.</strong> Margin reads the full text of a radiology report, identifies discrete findings, compares each finding&apos;s likely ICD-10 representation against the patient&apos;s active problem list, and outputs structured proposals for findings not already present. Each proposal contains a verbatim excerpt from the source report, the radiologist&apos;s hedging language, the documented recommendation when present, a suggested ICD-10 code, and an extraction confidence label. The source excerpt is verbatim-validated against the report text server-side; mismatches are rejected before the proposal reaches the clinician.
+        <strong style={sectionLabel}>Hypothesis.</strong> A language model can read a radiology report, identify findings that are not already on the problem list, and propose them for the hospitalist to verify. The clinician adds them, rejects them, or leaves them pending. The agent never edits the chart on its own.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Verification loop.</strong> The hospitalist reviews each proposal and selects an action: verify (the finding is added to the active problem list with a source badge linking to the originating report), reject (the proposal is discarded), or defer (the proposal remains pending). Every action is recorded in an append-only audit log with timestamp and acting clinician. Verified findings retain their source link permanently and can be removed if entered in error, in which case the original proposal returns to pending.
+        <strong style={sectionLabel}>Method.</strong> Margin reads the full text of each radiology report. For every finding the agent identifies, it generates a proposal containing five fields:
+      </p>
+      <ul style={bulletList}>
+        <li style={bulletItem}>A verbatim excerpt from the report</li>
+        <li style={bulletItem}>The radiologist&apos;s hedging language</li>
+        <li style={bulletItem}>The radiologist&apos;s recommendation (if one is documented)</li>
+        <li style={bulletItem}>A suggested ICD-10 code</li>
+        <li style={bulletItem}>An extraction confidence label</li>
+      </ul>
+      <p style={paragraph}>
+        The excerpt is verbatim-validated against the source report on the server. Proposals with mismatched excerpts are rejected before they reach the clinician.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Integration.</strong> Margin runs against radiology reports in the synthetic Keel EMR. Pending proposals appear on the AI tab of the affected patient&apos;s chart; verified findings appear in the Active Problems list with provenance preserved. Aggregated state across the dataset is visible on the Keel control panel.
+        <strong style={sectionLabel}>Verification loop.</strong> The hospitalist sees each proposal and acts on it. Three actions are possible:
+      </p>
+      <ul style={bulletList}>
+        <li style={bulletItem}>
+          <strong style={sectionLabel}>Verify.</strong> The finding is added to the active problem list. It carries a source badge linking back to the original report.
+        </li>
+        <li style={bulletItem}>
+          <strong style={sectionLabel}>Reject.</strong> The proposal is discarded.
+        </li>
+        <li style={bulletItem}>
+          <strong style={sectionLabel}>Defer.</strong> The proposal stays pending for later review.
+        </li>
+      </ul>
+      <p style={paragraph}>
+        Verified findings remain on the problem list indefinitely. If a finding was added in error, the hospitalist can remove it. The original proposal returns to pending in case it needs to be re-reviewed.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Status.</strong> Live. The experiment is deployed against the Keel synthetic dataset (18 patients, 6 of whom have Margin activity) and is observable at keel.floviken.se.
+        Every action &mdash; verify, reject, defer, remove &mdash; is recorded in an append-only audit log with timestamp and clinician name.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Integration.</strong> Margin runs against the radiology reports in the Keel synthetic EMR. Pending proposals appear on the AI tab of the affected patient&apos;s chart. Verified findings appear on the Active Problems list with the source link preserved. Aggregated activity across the dataset is visible on the Keel control panel.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Status.</strong> Live. The experiment is deployed against 18 synthetic patients. Margin has activity on 6 imaging studies.
       </p>
 
       <div style={buttonRow}>
