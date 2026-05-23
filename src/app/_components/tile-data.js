@@ -140,7 +140,7 @@ export const tiles = {
 
   margin: {
     name: "Margin",
-    oneLiner: "What the radiologist flagged. What discharge missed.",
+    oneLiner: "What the radiologist flagged. What the problem list missed.",
     tag: "06 · IN PROGRESS",
     verb: "In the margin.",
     sub: "This room is being built.",

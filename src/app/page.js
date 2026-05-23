@@ -221,7 +221,7 @@ export default function Home() {
               <div style={tagStyle}>05</div>
               <div style={nameStyle}>Margin</div>
             </div>
-            <div style={lineStyle}>What the radiologist flagged. What discharge missed.</div>
+            <div style={lineStyle}>What the radiologist flagged. What the problem list missed.</div>
           </div>
           <div style={{ ...statusBase, color: '#5f5e5a' }}>Live</div>
         </a>
