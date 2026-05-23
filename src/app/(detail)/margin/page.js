@@ -134,7 +134,7 @@ export default function Margin() {
 
       <div style={buttonRow}>
         <a
-          href="https://keel.floviken.se/patients/1?section=ai"
+          href="https://keel.floviken.se/worklist"
           target="_blank"
           rel="noopener noreferrer"
           style={buttonStyle}
