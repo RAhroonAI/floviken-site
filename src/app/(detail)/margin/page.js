@@ -1,5 +1,5 @@
 import { tileMetadata } from "@/app/_components/tile-data";
-import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+import { BackLink } from "@/app/_components/ActionTile";
 
 export const metadata = tileMetadata("margin");
 
@@ -10,6 +10,40 @@ const paragraph = {
   color: '#4a4a4a',
   marginBottom: '1rem',
   marginTop: 0,
+};
+
+const sectionLabel = {
+  fontWeight: 700,
+  color: '#2a2a2a',
+};
+
+const buttonRow = {
+  textAlign: 'center',
+  marginTop: '2.5rem',
+  marginBottom: '1.25rem',
+};
+
+const buttonStyle = {
+  display: 'inline-block',
+  fontFamily: '"Inter", -apple-system, sans-serif',
+  fontSize: '0.875rem',
+  letterSpacing: '0.04em',
+  color: '#2a2a2a',
+  textDecoration: 'none',
+  border: '1px solid #c8c2b5',
+  borderRadius: '4px',
+  padding: '12px 22px',
+};
+
+const statusLine = {
+  fontFamily: '"Inter", -apple-system, sans-serif',
+  fontSize: '0.75rem',
+  letterSpacing: '0.18em',
+  textTransform: 'uppercase',
+  color: '#8a8a8a',
+  textAlign: 'center',
+  marginTop: '1.25rem',
+  marginBottom: '1rem',
 };
 
 export default function Margin() {
@@ -33,25 +67,40 @@ export default function Margin() {
         marginBottom: '1.5rem',
         marginTop: 0,
       }}>
-        An experiment in surfacing imaging follow-up at discharge
+        Margin &mdash; surfacing radiology findings to the problem list
       </h1>
       <p style={paragraph}>
-        Most clinical AI work in imaging focuses on detection &mdash; helping radiologists identify findings on the scan itself. Far less attention goes to what happens after the radiologist documents an incidental finding. The recommendation is often right there in the report. It just doesn&apos;t always make it into the discharge plan, the problem list, or the follow-up loop.
+        <strong style={sectionLabel}>Background.</strong> Radiology reports document findings beyond the primary indication. Some are acted on during the admission; many are not. The active problem list, the structured field that carries forward through encounters and discharge documents, frequently lags behind the radiology impression. Findings remain in free-text fields, accessible by chart review but not surfaced for prospective review.
       </p>
       <p style={paragraph}>
-        Incidental findings on inpatient imaging &mdash; pulmonary nodules, adrenal masses, thyroid lesions &mdash; are routinely documented and routinely lost in the focus on the acute problem. Published follow-up rates for clinically significant incidentals frequently sit between thirty and sixty percent. Even when the radiologist explicitly recommends follow-up in the report, the recommendation often fails to reach the discharge plan. Chart review tends to focus on missed primary diagnoses, the findings that move billing and quality metrics. Incidental findings that won&apos;t change the index admission, but will matter six months later, get less scrutiny.
+        <strong style={sectionLabel}>Hypothesis.</strong> A language model with appropriate guardrails can extract structured proposals from a radiology report, identify which findings are not already represented on the active problem list, and present them for clinician verification. The clinician retains sole authority over the problem list. The agent&apos;s role is restricted to extraction, comparison, and surfacing.
       </p>
       <p style={paragraph}>
-        Margin asks a narrow question. Could a language model reliably extract the radiologist&apos;s documented follow-up recommendations from a CT report, so a hospitalist could see them as a checklist at the moment of discharge?
+        <strong style={sectionLabel}>Method.</strong> Margin reads the full text of a radiology report, identifies discrete findings, compares each finding&apos;s likely ICD-10 representation against the patient&apos;s active problem list, and outputs structured proposals for findings not already present. Each proposal contains a verbatim excerpt from the source report, the radiologist&apos;s hedging language, the documented recommendation when present, a suggested ICD-10 code, and an extraction confidence label. The source excerpt is verbatim-validated against the report text server-side; mismatches are rejected before the proposal reaches the clinician.
       </p>
       <p style={paragraph}>
-        The clinician decides what to do with each finding. The model only surfaces what the radiologist already flagged.
+        <strong style={sectionLabel}>Verification loop.</strong> The hospitalist reviews each proposal and selects an action: verify (the finding is added to the active problem list with a source badge linking to the originating report), reject (the proposal is discarded), or defer (the proposal remains pending). Every action is recorded in an append-only audit log with timestamp and acting clinician. Verified findings retain their source link permanently and can be removed if entered in error, in which case the original proposal returns to pending.
       </p>
       <p style={paragraph}>
-        This room is a concept under development. The intended build evaluates the extraction layer against a corpus of publicly available CT reports with annotated ground truth, then wraps the validated extraction in a simple interface. A prototype, not a clinical tool. A recipe for what such a tool could be.
+        <strong style={sectionLabel}>Integration.</strong> Margin runs against radiology reports in the synthetic Keel EMR. Pending proposals appear on the AI tab of the affected patient&apos;s chart; verified findings appear in the Active Problems list with provenance preserved. Aggregated state across the dataset is visible on the Keel control panel.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Status.</strong> Live. The experiment is deployed against the Keel synthetic dataset (18 patients, 6 of whom have Margin activity) and is observable at keel.floviken.se.
       </p>
 
-      <ClosingTile slug="margin" />
+      <div style={buttonRow}>
+        <a
+          href="https://keel.floviken.se/patients/1?section=ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={buttonStyle}
+        >
+          Open Margin in Keel &rarr;
+        </a>
+      </div>
+
+      <div style={statusLine}>05 &middot; Live</div>
+
       <BackLink />
     </article>
   );

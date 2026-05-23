@@ -205,24 +205,6 @@ export default function Home() {
           <div style={{ ...statusBase, color: '#F2D88A' }}>Live</div>
         </a>
 
-        <a className="tile" href="/sundown" style={{ ...tileBase, background: '#2a1f3a' }}>
-          <div style={artBase}>
-            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
-              <rect x="0" y="130" width="200" height="70" fill="#1a1326" />
-              <circle cx="100" cy="130" r="36" fill="#EF9F27" opacity="0.55" />
-              <line x1="0" y1="130" x2="200" y2="130" stroke="#EF9F27" strokeWidth="0.5" opacity="0.4" />
-            </svg>
-          </div>
-          <div style={{ ...innerBase, color: '#d4c8e8' }}>
-            <div>
-              <div style={tagStyle}>05</div>
-              <div style={nameStyle}>Sundown</div>
-            </div>
-            <div style={lineStyle}>Cross-cover at midnight.</div>
-          </div>
-          <div style={{ ...statusBase, color: '#d4c8e8' }}>In progress</div>
-        </a>
-
         <a className="tile" href="/margin" style={{ ...tileBase, background: '#f1ede3' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
@@ -236,12 +218,30 @@ export default function Home() {
           </div>
           <div style={{ ...innerBase, color: '#2c2c2a' }}>
             <div>
-              <div style={tagStyle}>06</div>
+              <div style={tagStyle}>05</div>
               <div style={nameStyle}>Margin</div>
             </div>
             <div style={lineStyle}>What the radiologist flagged. What discharge missed.</div>
           </div>
-          <div style={{ ...statusBase, color: '#5f5e5a' }}>In progress</div>
+          <div style={{ ...statusBase, color: '#5f5e5a' }}>Live</div>
+        </a>
+
+        <a className="tile" href="/sundown" style={{ ...tileBase, background: '#2a1f3a' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+              <rect x="0" y="130" width="200" height="70" fill="#1a1326" />
+              <circle cx="100" cy="130" r="36" fill="#EF9F27" opacity="0.55" />
+              <line x1="0" y1="130" x2="200" y2="130" stroke="#EF9F27" strokeWidth="0.5" opacity="0.4" />
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#d4c8e8' }}>
+            <div>
+              <div style={tagStyle}>06</div>
+              <div style={nameStyle}>Sundown</div>
+            </div>
+            <div style={lineStyle}>Cross-cover at midnight.</div>
+          </div>
+          <div style={{ ...statusBase, color: '#d4c8e8' }}>In progress</div>
         </a>
 
         <a className="tile" href="/daybreak" style={{ ...tileBase, background: '#d8e3ef' }}>
