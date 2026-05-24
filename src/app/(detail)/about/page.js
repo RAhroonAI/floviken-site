@@ -24,16 +24,19 @@ export default function About() {
         color: '#3a3a3a',
       }}>
         <p style={{ margin: '0 0 1rem 0' }}>
-          I&apos;m Richard Ahroon, a board-certified internist and hospitalist, US/Swedish dual citizen, with active clinical practice in the United States. I trained in biomedical engineering before medicine, and that background has shaped a long-standing interest in where clinical medicine meets technology.
+          I&apos;m Richard Ahroon, an internist and hospitalist with a background in biomedical engineering. I&apos;m a US/Swedish dual citizen with an active part-time clinical practice in the United States, based in Karlstad, Sweden.
         </p>
         <p style={{ margin: '0 0 1rem 0' }}>
-          Inpatient hospital medicine is the work &mdash; admissions, cross-cover, ICU co-management, the full arc of an acute-care stay. It&apos;s also a field where AI-enabled tools &mdash; ambient documentation, clinical decision support, deterioration and sepsis alerting &mdash; have moved from pilots to routine infrastructure. The lab is where I think about that shift from the clinician&apos;s side.
+          Floviken is a working laboratory for clinical AI. Each experiment is a room. When a room needs a clinical surface to live in, it runs on <a href="https://keel.floviken.se" target="_blank" rel="noopener noreferrer" style={{ color: '#5a5a5a', textDecoration: 'none', borderBottom: '1px solid #d8d2c5', paddingBottom: '1px' }}>Keel</a>, a synthetic EMR I built as the lab&apos;s substrate. Keel holds patients, charts, imaging, problem lists, and an agent log.
         </p>
         <p style={{ margin: '0 0 1rem 0' }}>
-          I build small clinical AI experiments exploring common hospitalist workflow questions &mdash; handoff structure, time-critical decision support, high-risk encounter documentation. Built from public guidelines and synthetic cases. Independent projects, not deployed in any clinical setting. Floviken is personal work, built on personal time, not affiliated with any employer or health system.
+          The lab is built around inpatient hospital medicine. Admissions, cross-cover, ICU co-management, the full arc of an acute-care stay. Ghost Signout captures the patients who came off the service overnight so they don&apos;t disappear from the morning list. Lowfire moves from the neutropenic fever alert to the orders inside the 60-minute window. Doorstep gives the AMA discharge a documentation path. Margin reads radiology reports and surfaces incidental findings into the problem list so they don&apos;t get missed. The lab&apos;s commitment is to build AI into the chart, not next to it, and to constrain what the AI does with something verifiable: a source document, a guideline, or a deterministic algorithm.
+        </p>
+        <p style={{ margin: '0 0 1rem 0' }}>
+          The patients are synthetic. The guidelines are public. Nothing here is deployed in any clinical setting. Floviken is personal work on personal time, not affiliated with any employer or health system.
         </p>
         <p style={{ margin: 0 }}>
-          If you&apos;re working on clinical AI and want a clinician&apos;s perspective, or you&apos;re a clinician thinking about getting closer to the tech side, I&apos;d like to hear from you.
+          If you&apos;re building, hiring, or investing in clinical AI and want a clinician&apos;s perspective, get in touch.
         </p>
       </div>
 
