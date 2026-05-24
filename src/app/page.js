@@ -94,7 +94,6 @@ export default function Home() {
           </div>
           <div style={{ ...innerBase, color: '#2C2C2A' }}>
             <div>
-              <div style={{ ...tagStyle, color: '#5A5142' }}>00</div>
               <div style={nameStyle}>About</div>
             </div>
             <div style={{ ...lineStyle, color: '#5A5142' }}>The lab and the clinician behind it.</div>
