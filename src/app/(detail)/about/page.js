@@ -36,7 +36,7 @@ export default function About() {
           The patients are synthetic. The guidelines are public. Nothing here is deployed in any clinical setting. Floviken is personal work on personal time, not affiliated with any employer or health system.
         </p>
         <p style={{ margin: 0 }}>
-          If you&apos;re building, hiring, or investing in clinical AI and want a clinician&apos;s perspective, get in touch.
+          If you work in clinical AI and want a clinician&apos;s perspective, get in touch. Opinions on the lab or any experiment are welcome.
         </p>
       </div>
 
