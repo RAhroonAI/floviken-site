@@ -140,10 +140,10 @@ export const tiles = {
 
   margin: {
     name: "Margin",
-    oneLiner: "What the radiologist flagged. What the problem list missed.",
+    oneLiner: "The findings are in the report. Margin asks if they belong on the problem list.",
     tag: "05 · LIVE",
     verb: "In the margin.",
-    sub: "What the radiologist flagged. What the problem list missed.",
+    sub: "The findings are in the report. Margin asks if they belong on the problem list.",
     href: "/margin",
     external: false,
     bg: "#f1ede3",
