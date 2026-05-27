@@ -12,6 +12,15 @@ const paragraph = {
   marginTop: 0,
 };
 
+const sectionLabel = {
+  fontFamily: '"Inter", -apple-system, sans-serif',
+  fontSize: '0.75rem',
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  color: '#8a8a8a',
+  margin: '2rem 0 0.75rem 0',
+};
+
 export default function Daybreak() {
   return (
     <article>
@@ -52,6 +61,22 @@ export default function Daybreak() {
       </p>
       <p style={paragraph}>
         Synthetic data only. No EHR integration. A prototype, not a clinical tool. The point is to show that an hour of pre-shift labor could be a button.
+      </p>
+
+      <p style={sectionLabel}>What Daybreak does in practice</p>
+      <p style={paragraph}>
+        Daybreak reads yesterday&apos;s roster, scores each patient on four factors, and proposes a balanced distribution across the working hospitalists in about a second. The proposal arrives as three columns, one per hospitalist, with every patient&apos;s load score broken out into its parts &mdash; active problems, level of care, disposition, and role &mdash; so the operator can see exactly why a number is what it is. Drag a patient between columns to override the proposal. Pin a patient with a lock so re-proposing leaves them where they are. When the list is right, commit it. The commit writes both the algorithmic baseline and the human-edited final state to an audit row, so the difference between what the model proposed and what a clinician actually chose is preserved for every run.
+      </p>
+
+      <p style={sectionLabel}>What Daybreak doesn&apos;t do</p>
+      <p style={paragraph}>
+        Daybreak does not read real patient records. The roster, the prior assignments, and the load factors all come from a synthetic chart substrate. Nothing it computes touches a production system.
+      </p>
+      <p style={paragraph}>
+        Daybreak does not make clinical decisions. It balances workload. It does not decide who needs to be seen first, whether a patient is sick enough to escalate, or which hospitalist should keep which kind of case. Those are still human calls, made by the people on the list.
+      </p>
+      <p style={paragraph}>
+        Daybreak does not replace the operator. Every assignment can be moved. Every proposal can be re-run. The final state is whatever the operator commits, not whatever the algorithm proposed. The tool exists to do the arithmetic so the operator can spend their attention on the judgment calls.
       </p>
 
       <ClosingTile slug="daybreak" />

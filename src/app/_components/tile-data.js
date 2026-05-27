@@ -164,10 +164,10 @@ export const tiles = {
   daybreak: {
     name: "Daybreak",
     oneLiner: "The hour before rounds.",
-    tag: "07 · IN PROGRESS",
+    tag: "07 · LIVE",
     verb: "Before sunrise.",
-    sub: "This room is being built.",
-    href: null,
+    sub: "The hour before rounds.",
+    href: "/daybreak",
     external: false,
     bg: "#d8e3ef",
     color: "#2c3e50",

@@ -258,7 +258,7 @@ export default function Home() {
             </div>
             <div style={lineStyle}>The hour before rounds.</div>
           </div>
-          <div style={{ ...statusBase, color: '#5f6e7d' }}>In progress</div>
+          <div style={{ ...statusBase, color: '#5f6e7d' }}>Live</div>
         </a>
 
         <a className="tile" href="/scribe" style={{ ...tileBase, background: '#B8C2B0' }}>
