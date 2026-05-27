@@ -79,6 +79,15 @@ export default function Daybreak() {
         Daybreak does not replace the operator. Every assignment can be moved. Every proposal can be re-run. The final state is whatever the operator commits, not whatever the algorithm proposed. The tool exists to do the arithmetic so the operator can spend their attention on the judgment calls.
       </p>
 
+      <p style={{ ...paragraph, fontStyle: 'italic' }}>
+        <a
+          href="https://keel.floviken.se/worklist"
+          style={{ color: '#4a4a4a', textDecoration: 'underline', textDecorationStyle: 'dotted', textUnderlineOffset: '3px' }}
+        >
+          View the live worklist on Keel &rarr;
+        </a>
+      </p>
+
       <ClosingTile slug="daybreak" />
       <BackLink />
     </article>
