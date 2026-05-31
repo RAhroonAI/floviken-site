@@ -1,5 +1,5 @@
 import { tileMetadata } from "@/app/_components/tile-data";
-import { ClosingTile, BackLink } from "@/app/_components/ActionTile";
+import { BackLink } from "@/app/_components/ActionTile";
 
 export const metadata = tileMetadata("daybreak");
 
@@ -13,12 +13,51 @@ const paragraph = {
 };
 
 const sectionLabel = {
+  fontWeight: 700,
+  color: '#2a2a2a',
+};
+
+const bulletList = {
+  fontFamily: '"Georgia", serif',
+  fontSize: '1rem',
+  lineHeight: '1.7',
+  color: '#4a4a4a',
+  marginTop: 0,
+  marginBottom: '1rem',
+  paddingLeft: '1.5rem',
+};
+
+const bulletItem = {
+  marginBottom: '0.25rem',
+};
+
+const buttonRow = {
+  textAlign: 'center',
+  marginTop: '2.5rem',
+  marginBottom: '1.25rem',
+};
+
+const buttonStyle = {
+  display: 'inline-block',
+  fontFamily: '"Inter", -apple-system, sans-serif',
+  fontSize: '0.875rem',
+  letterSpacing: '0.04em',
+  color: '#2a2a2a',
+  textDecoration: 'none',
+  border: '1px solid #c8c2b5',
+  borderRadius: '4px',
+  padding: '12px 22px',
+};
+
+const statusLine = {
   fontFamily: '"Inter", -apple-system, sans-serif',
   fontSize: '0.75rem',
-  letterSpacing: '0.12em',
+  letterSpacing: '0.18em',
   textTransform: 'uppercase',
   color: '#8a8a8a',
-  margin: '2rem 0 0.75rem 0',
+  textAlign: 'center',
+  marginTop: '1.25rem',
+  marginBottom: '1rem',
 };
 
 export default function Daybreak() {
@@ -45,50 +84,66 @@ export default function Daybreak() {
         The hour before rounds
       </h1>
       <p style={paragraph}>
-        Every morning in hospital medicine, before the day team arrives, the patient list has to be redistributed. Overnight admissions and consults from the swing and night shifts need to be folded into the existing service. Discharges from the prior day need to be removed. Patients carried over from yesterday need to stay, where possible, with the hospitalist who already knows them. The result has to be balanced &mdash; not by patient count, but by clinical load &mdash; and it has to be out before the day starts, because nurses, pharmacists, consultants, and families all depend on knowing whose name is next to whose patient.
+        <strong style={sectionLabel}>Background.</strong> Every morning before rounds, the patient list is redistributed by hand. Patients picked up overnight by the swing and night shifts are folded in. The prior day&apos;s discharges are removed. An oncoming hospitalist may take over a service for a colleague signing off, and patients are kept, where possible, with the doctor who already knows them. The list is balanced by clinical load, not by headcount.
       </p>
       <p style={paragraph}>
-        In most hospitals, this work is done by hand. Someone comes in early &mdash; sometimes a nurse, sometimes a physician &mdash; reads through charts, and makes judgment calls about which patient is heavier than which. The work is skilled, repetitive, and time-consuming. The clinical day cannot start until it is done.
+        Every patient needs a responsible name before the day starts, because the hospital, the patient, and the family all depend on knowing who is responsible. This is done manually, every day, in nearly every group.
       </p>
       <p style={paragraph}>
-        Daybreak asks a narrow question. Could a small piece of software, given a synthetic patient pool and a list of working hospitalists, produce a balanced morning assignment in two seconds &mdash; with the reasoning visible &mdash; that a human could accept, adjust, or override?
+        <strong style={sectionLabel}>Hypothesis.</strong> A model could produce a balanced morning assignment in seconds, with the reasoning visible, that a clinician can accept, adjust, or override. The model does the mechanical balancing. The soft judgment a doctor carries &mdash; the difficult family, the patient who looks stable but isn&apos;t &mdash; stays with the human.
       </p>
       <p style={paragraph}>
-        The model is simple. Each patient gets a load score from four factors a chart can answer: number of active problems, level of care, day of stay, and primary versus consult status. ICU patients carry more weight than floor patients. New admits carry more weight than known patients. Consults carry less than primary. The scores are summed across hospitalists, and the optimizer balances total load &mdash; not patient count &mdash; while preserving continuity from the prior day where possible.
+        <strong style={sectionLabel}>Method.</strong> Each patient gets a load score from four factors a chart can answer:
+      </p>
+      <ul style={bulletList}>
+        <li style={bulletItem}>Active problems</li>
+        <li style={bulletItem}>Level of care</li>
+        <li style={bulletItem}>Day of stay</li>
+        <li style={bulletItem}>Primary versus consult</li>
+      </ul>
+      <p style={paragraph}>
+        The factors carry the weight of clinical reality: an ICU patient outweighs a floor patient, a new admission outweighs a known one, and a consult counts for less than a primary. The scores are summed across the working hospitalists, and an optimizer balances total load &mdash; not patient count &mdash; while preserving continuity from the prior day where possible.
       </p>
       <p style={paragraph}>
-        The architectural commitment is that the model is legible. Every patient&apos;s load is the product of four numbers anyone can read. Every assignment can be explained in one sentence. The tool does not hide its reasoning behind a black box. A hospitalist looking at her list should be able to ask &ldquo;why did I get this patient?&rdquo; and get an honest answer.
+        Because each score is the product of four readable numbers, every assignment can be explained in one sentence. The model does not hide its reasoning behind a black box.
       </p>
       <p style={paragraph}>
-        Synthetic data only. No EHR integration. A prototype, not a clinical tool. The point is to show that an hour of pre-shift labor could be a button.
+        <strong style={sectionLabel}>Verification loop.</strong> The proposal arrives as columns, one per hospitalist, with each patient&apos;s load score broken into its parts, so the operator can see exactly why a number is what it is. The operator acts on it:
+      </p>
+      <ul style={bulletList}>
+        <li style={bulletItem}>
+          <strong style={sectionLabel}>Override.</strong> Drag a patient between columns to move them off the proposed assignment.
+        </li>
+        <li style={bulletItem}>
+          <strong style={sectionLabel}>Pin.</strong> Lock a patient so re-proposing leaves them in place while the rest rebalances.
+        </li>
+        <li style={bulletItem}>
+          <strong style={sectionLabel}>Commit.</strong> Accept the list when it is right.
+        </li>
+      </ul>
+      <p style={paragraph}>
+        On commit, both the algorithmic baseline and the human-edited final state are written to an audit row, preserving the difference between what the model proposed and what the clinician actually chose.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Integration.</strong> Daybreak runs against the synthetic patient pool in Keel. The morning proposal appears as columns on the Keel worklist, where the operator overrides and commits it, and every committed run is stored with the algorithmic baseline it started from.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Status.</strong> Live. The experiment is deployed against the Keel synthetic patient pool.
       </p>
 
-      <p style={sectionLabel}>What Daybreak does in practice</p>
-      <p style={paragraph}>
-        Daybreak reads yesterday&apos;s roster, scores each patient on four factors, and proposes a balanced distribution across the working hospitalists in about a second. The proposal arrives as three columns, one per hospitalist, with every patient&apos;s load score broken out into its parts &mdash; active problems, level of care, disposition, and role &mdash; so the operator can see exactly why a number is what it is. Drag a patient between columns to override the proposal. Pin a patient with a lock so re-proposing leaves them where they are. When the list is right, commit it. The commit writes both the algorithmic baseline and the human-edited final state to an audit row, so the difference between what the model proposed and what a clinician actually chose is preserved for every run.
-      </p>
-
-      <p style={sectionLabel}>What Daybreak doesn&apos;t do</p>
-      <p style={paragraph}>
-        Daybreak does not read real patient records. The roster, the prior assignments, and the load factors all come from a synthetic chart substrate. Nothing it computes touches a production system.
-      </p>
-      <p style={paragraph}>
-        Daybreak does not make clinical decisions. It balances workload. It does not decide who needs to be seen first, whether a patient is sick enough to escalate, or which hospitalist should keep which kind of case. Those are still human calls, made by the people on the list.
-      </p>
-      <p style={paragraph}>
-        Daybreak does not replace the operator. Every assignment can be moved. Every proposal can be re-run. The final state is whatever the operator commits, not whatever the algorithm proposed. The tool exists to do the arithmetic so the operator can spend their attention on the judgment calls.
-      </p>
-
-      <p style={{ ...paragraph, fontStyle: 'italic' }}>
+      <div style={buttonRow}>
         <a
           href="https://keel.floviken.se/worklist"
-          style={{ color: '#4a4a4a', textDecoration: 'underline', textDecorationStyle: 'dotted', textUnderlineOffset: '3px' }}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={buttonStyle}
         >
-          View the live worklist on Keel &rarr;
+          Open Daybreak in Keel &rarr;
         </a>
-      </p>
+      </div>
 
-      <ClosingTile slug="daybreak" />
+      <div style={statusLine}>07 &middot; Live</div>
+
       <BackLink />
     </article>
   );
