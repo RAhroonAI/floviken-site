@@ -124,7 +124,7 @@ export default function Home() {
           <div style={{ ...statusBase, color: '#2d4346' }}>EMR</div>
         </a>
 
-        <a className="tile" href="/ghost-signout" style={{ ...tileBase, background: '#1a2533' }}>
+        <a className="tile" href="/wake" style={{ ...tileBase, background: '#1a2533' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
               <rect x="0" y="120" width="200" height="80" fill="#0f1822" />
@@ -135,9 +135,9 @@ export default function Home() {
           <div style={{ ...innerBase, color: '#d8e3ef' }}>
             <div>
               <div style={tagStyle}>01</div>
-              <div style={nameStyle}>Ghost Signout</div>
+              <div style={nameStyle}>Wake</div>
             </div>
-            <div style={lineStyle}>The morning handoff, and what it doesn&apos;t see.</div>
+            <div style={lineStyle}>What happened overnight. What the morning list doesn&apos;t show.</div>
           </div>
           <div style={{ ...statusBase, color: '#d8e3ef' }}>Live</div>
         </a>

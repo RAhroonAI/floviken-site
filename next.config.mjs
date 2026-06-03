@@ -1,6 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      // Experiment 01 was renamed Ghost Signout -> Wake. Keep the old writeup
+      // URL (and the existing LinkedIn link to it) working. Permanent (308).
+      // NOTE: this only reslugs the floviken.se writeup page. The external
+      // standalone app at ghost-signout.vercel.app is a separate deployment and
+      // is intentionally NOT redirected.
+      {
+        source: "/ghost-signout",
+        destination: "/wake",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

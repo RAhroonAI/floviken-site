@@ -25,14 +25,14 @@ export const tiles = {
     `,
   },
 
-  "ghost-signout": {
-    name: "Ghost Signout",
-    oneLiner: "The morning handoff, and what it doesn’t see.",
+  wake: {
+    name: "Wake",
+    oneLiner: "What happened overnight. What the morning list doesn’t show.",
     tag: "01 · LIVE",
     verb: "See what was missed.",
-    sub: "ghost-signout.vercel.app",
-    href: "https://ghost-signout.vercel.app/capture",
-    external: true,
+    sub: "What happened overnight. What the morning list doesn’t show.",
+    href: "/wake",
+    external: false,
     bg: "#1a2533",
     color: "#d8e3ef",
     tagColor: "#d8e3ef",
