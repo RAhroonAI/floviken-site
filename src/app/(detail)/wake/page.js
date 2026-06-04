@@ -19,20 +19,6 @@ const sectionLabel = {
   color: '#2a2a2a',
 };
 
-const bulletList = {
-  fontFamily: '"Georgia", serif',
-  fontSize: '1rem',
-  lineHeight: '1.7',
-  color: '#4a4a4a',
-  marginTop: 0,
-  marginBottom: '1rem',
-  paddingLeft: '1.5rem',
-};
-
-const bulletItem = {
-  marginBottom: '0.25rem',
-};
-
 const buttonRow = {
   textAlign: 'center',
   marginTop: '2.5rem',
@@ -99,61 +85,31 @@ export default function Wake() {
         marginBottom: '1.5rem',
         marginTop: 0,
       }}>
-        Wake &mdash; surfacing overnight departures, reconciling the chart
+        Wake &mdash; the overnight layer of the morning handoff
       </h1>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Background.</strong> The morning handoff is written for the patients still on the service. But some leave overnight &mdash; they pass away, transfer to inpatient hospice, leave AMA, transfer to another facility, or are admitted and discharged before morning. By the time the day team rounds, those patients are off the active list. The census shows who is in the beds, not what happened to everyone who is no longer in one.
+        <strong style={sectionLabel}>Background.</strong> The morning assignment list is built from the patients still on the service &mdash; who is here, and who covers them. But some patients leave overnight: they pass away, transfer to inpatient hospice, leave AMA, transfer to another facility, or are admitted and discharged before morning. By the time the day team rounds, those patients are off the list, and the list is silent on them. The assignments show who is present; they cannot show who left, or why, or what they left unfinished.
       </p>
       <p style={paragraph}>
-        That gap is about what the day team never learns. The AMA departure that should be on the record. The overnight result no one has acted on. The family that still has not been reached. The patient who generated each of these is no longer on the list, so neither is the thing they left behind.
+        There is also a second kind of overnight loose end: the patient who was already discharged, days ago, when a lab calls at 3 a.m. with a positive culture and someone has to reach them. They are not on any list either. These are the things the morning handoff has no place for, because the patient who generated them is no longer on it.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Hypothesis.</strong> A clinician captures each disposition as it happens; at sign-off a language model turns them into a handoff the day team can read in thirty seconds. Structured fields, not the model, decide what is still outstanding. And because each event names a real patient, it can also reconcile the chart &mdash; moving the patient off the active list to where they belong. The clinician confirms every reconciliation. The model only writes language; it never invents a fact, judges clinical state, or changes the chart on its own.
+        <strong style={sectionLabel}>Hypothesis.</strong> The clinician who worked the night is the one who knows what happened on it &mdash; so that clinician should produce the handoff, not reconstruct it later from a list that has already moved on. Wake is the overnight layer of that handoff: it reads the night&apos;s departures directly from the chart, lets the clinician annotate them and track any open loops, and folds the result into the morning assignment sheet that the day team already reads. One person produces it; the lock hands it over.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Method.</strong> Wake captures the six dispositions that remove a patient from the list:
-      </p>
-      <ul style={bulletList}>
-        <li style={bulletItem}>Critical Follow-up</li>
-        <li style={bulletItem}>Expired</li>
-        <li style={bulletItem}>Inpatient Hospice</li>
-        <li style={bulletItem}>AMA</li>
-        <li style={bulletItem}>Transfer Out</li>
-        <li style={bulletItem}>Admit &amp; Discharge</li>
-      </ul>
-      <p style={paragraph}>
-        Each event is logged in a few taps &mdash; category, patient, time, a note, and for the ones carrying an unfinished task, structured fields (death certificate signed, family notified, transfer destination, capacity assessed). At sign-off the model assembles them into a categorized document, under two rules:
-      </p>
-      <ul style={bulletList}>
-        <li style={bulletItem}>
-          Structured fields, evaluated in code, decide every PENDING flag. The model renders them; it never infers them.
-        </li>
-        <li style={bulletItem}>
-          The summary contains nothing the clinician did not enter. The model tightens language; it does not add fact.
-        </li>
-      </ul>
-      <p style={paragraph}>
-        <strong style={sectionLabel}>Reconciliation loop.</strong> Five of the six are discharges; the clinician confirms each one.
-      </p>
-      <ul style={bulletList}>
-        <li style={bulletItem}>
-          <strong style={sectionLabel}>Transfer Out, Inpatient Hospice, Admit &amp; Discharge, Expired</strong> &mdash; discharged through Keel&apos;s own path with the matching disposition: the status moves, the encounter closes, medications reconcile, and the disposition is recorded, so the chart shows not just that the patient left but how.
-        </li>
-        <li style={bulletItem}>
-          <strong style={sectionLabel}>AMA</strong> &mdash; also a discharge, but not Wake&apos;s to close. It has to clear a capacity-and-risk gate first, so Wake hands it off and leaves the patient on the list until that is done.
-        </li>
-        <li style={bulletItem}>
-          <strong style={sectionLabel}>Critical Follow-up</strong> &mdash; not a discharge. The patient is still admitted; nothing changes.
-        </li>
-      </ul>
-      <p style={paragraph}>
-        Until a departure is reconciled, Wake flags the patient as still active in the chart &mdash; so the capture list doubles as a checklist of what the EMR has not caught up on.
+        <strong style={sectionLabel}>Method.</strong> Wake adds nothing the chart does not already record. A clinician starts a night shift. Every patient discharged during the shift &mdash; to hospice, AMA, a transfer, a routine discharge, or expired &mdash; appears automatically as a departure, read from the chart&apos;s own discharge events and scoped to the shift&apos;s window. The clinician can add a short note to any of them for the day team. Departures are derived, never re-entered.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Integration.</strong> Wake runs against the 18 synthetic patients in Keel. Reconciliations write through the same path the chart&apos;s own controls use, so the worklist, the morning assignment list, and the discharged view stop disagreeing about who is still on service. Generated sign-outs appear on the Keel activity log.
+        The one thing the chart cannot otherwise carry is an open loop on a patient who is already gone. Wake stores exactly that: a follow-up thread &mdash; a note and a status (open, reached, unable to reach, handed off) on an already-discharged patient &mdash; opened by the night clinician and closed by whoever resolves it. It is the only clinical content Wake originates from nothing. The shift boundary and the optional departure note are its only other writes, and none of them touch the chart.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Status.</strong> Live. Deployed against the 18 synthetic patients, with one overnight shift recorded across all six categories.
+        <strong style={sectionLabel}>Generate and lock.</strong> At the end of the night, one action generates the morning sheet: it runs the assignment algorithm and freezes the overnight section &mdash; departures and open follow-ups &mdash; into a single working draft. The clinician reviews it, adjusts an assignment if someone is sicker than the load model knows, then locks it. Locking stamps the sheet with the time and the author and makes it read-only; the lock is the handoff. The day team reads the locked sheet and picks up patients as they assume care. The structured sheet is the handoff. A language model can, on request, render it into prose, but it is never on the path: it writes language only, invents no fact, and the sheet is complete without it.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Integration.</strong> Wake runs against the synthetic patients in Keel and shares its chart with the morning assignment room. Because departures are read from the same discharge events the worklist and the discharged view already use, the three never disagree about who is on service: a patient who left is absent from the assignments, present in the overnight section, and on the discharged list &mdash; one fact, three views. The assignments account for who is here; the overnight layer accounts for everyone who is not.
+      </p>
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Status.</strong> Live. Deployed against the synthetic patients in Keel, producing the morning sheet &mdash; assignments plus the overnight layer &mdash; as one locked handoff.
       </p>
 
       <div style={buttonRow}>
