@@ -99,19 +99,19 @@ export default function Wake() {
         marginBottom: '1.5rem',
         marginTop: 0,
       }}>
-        Wake &mdash; surfacing overnight departures and reconciling them with the chart
+        Wake &mdash; surfacing overnight departures, reconciling the chart
       </h1>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Background.</strong> Morning handoff documents are written for the patients still on the service. But some patients come off the service overnight &mdash; they die, transfer to hospice, leave against medical advice, transfer to a higher-level facility, or are admitted and discharged before morning. By the time the day team rounds, those patients are gone from the active list. The census shows who is in the beds; it is silent on what happened to the people who are not.
+        <strong style={sectionLabel}>Background.</strong> The morning handoff is written for the patients still on the service. But some leave overnight &mdash; they pass away, transfer to inpatient hospice, leave AMA, transfer to another facility, or are admitted and discharged before morning. By the time the day team rounds, those patients are off the active list. The census shows who is in the beds, not what happened to everyone who is no longer in one.
       </p>
       <p style={paragraph}>
-        That silence is a clinical visibility gap. The patient who left AMA and still needs a follow-up call. The overnight result that needs day-team action. The transfer where the family could not be reached and still has to be contacted in the morning. And the EMR&apos;s own status fields cannot always express what happened &mdash; there is no state to mark a patient as deceased &mdash; so a patient who died overnight can still appear active on the morning list.
+        That gap is about what the day team never learns. The AMA departure that should be on the record. The overnight result no one has acted on. The family that still has not been reached. The patient who generated each of these is no longer on the list, so neither is the thing they left behind.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Hypothesis.</strong> A language model can take the disposition events a clinician captures across a shift and synthesize them into a handoff the day team can scan in thirty seconds &mdash; while the structured fields behind each event, not the model, decide what is still outstanding. And because each disposition names a real patient, the same event can reconcile the chart: move the patient off the active list to where they belong. The clinician confirms each reconciliation. The agent never changes the chart on its own, and the model only writes language &mdash; it never invents a clinical fact and never judges clinical state.
+        <strong style={sectionLabel}>Hypothesis.</strong> A clinician captures each disposition as it happens; at sign-off a language model turns them into a handoff the day team can read in thirty seconds. Structured fields, not the model, decide what is still outstanding. And because each event names a real patient, it can also reconcile the chart &mdash; moving the patient off the active list to where they belong. The clinician confirms every reconciliation. The model only writes language; it never invents a fact, judges clinical state, or changes the chart on its own.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Method.</strong> Wake captures six categories &mdash; the dispositions that actually remove a patient from the list:
+        <strong style={sectionLabel}>Method.</strong> Wake captures the six dispositions that remove a patient from the list:
       </p>
       <ul style={bulletList}>
         <li style={bulletItem}>Critical Follow-up</li>
@@ -122,41 +122,38 @@ export default function Wake() {
         <li style={bulletItem}>Admit &amp; Discharge</li>
       </ul>
       <p style={paragraph}>
-        During a shift, each event is logged in a few taps: the category, the patient, the time, a free-text note, and &mdash; for the dispositions that carry an unfinished task &mdash; structured fields (death certificate signed, family notified, transfer destination, capacity assessed). At sign-off, the model assembles the events into a categorized morning document. Two rules hold the boundary:
+        Each event is logged in a few taps &mdash; category, patient, time, a note, and for the ones carrying an unfinished task, structured fields (death certificate signed, family notified, transfer destination, capacity assessed). At sign-off the model assembles them into a categorized document, under two rules:
       </p>
       <ul style={bulletList}>
         <li style={bulletItem}>
-          The structured fields, evaluated in code, decide every PENDING flag &mdash; the unfinished items the day team must pick up. The model renders those flags; it never infers them.
+          Structured fields, evaluated in code, decide every PENDING flag. The model renders them; it never infers them.
         </li>
         <li style={bulletItem}>
-          The summary contains nothing the clinician did not enter. The model tightens language; it does not add clinical fact.
+          The summary contains nothing the clinician did not enter. The model tightens language; it does not add fact.
         </li>
       </ul>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Reconciliation loop.</strong> Each captured departure can be reconciled into the chart, and the clinician decides each one. The action depends on the disposition:
+        <strong style={sectionLabel}>Reconciliation loop.</strong> Five of the six are discharges; the clinician confirms each one.
       </p>
       <ul style={bulletList}>
         <li style={bulletItem}>
-          <strong style={sectionLabel}>Transfer Out, Inpatient Hospice, Admit &amp; Discharge.</strong> The patient is discharged through Keel&apos;s own discharge path: the status moves, the encounter closes, medications reconcile, and a discharge event is recorded.
+          <strong style={sectionLabel}>Transfer Out, Inpatient Hospice, Admit &amp; Discharge, Expired</strong> &mdash; discharged through Keel&apos;s own path with the matching disposition: the status moves, the encounter closes, medications reconcile, and the disposition is recorded, so the chart shows not just that the patient left but how.
         </li>
         <li style={bulletItem}>
-          <strong style={sectionLabel}>Expired.</strong> The patient moves to a deceased state. Keel had no way to represent a death; Wake adds one. The patient leaves the active list and does not appear on the discharged list either.
+          <strong style={sectionLabel}>AMA</strong> &mdash; also a discharge, but not Wake&apos;s to close. It has to clear a capacity-and-risk gate first, so Wake hands it off and leaves the patient on the list until that is done.
         </li>
         <li style={bulletItem}>
-          <strong style={sectionLabel}>AMA.</strong> Wake does not close it. An against-medical-advice discharge has to clear a capacity-and-risk gate first, so Wake hands the patient to that workflow and leaves them on the list until it is complete.
-        </li>
-        <li style={bulletItem}>
-          <strong style={sectionLabel}>Critical Follow-up.</strong> The patient is still admitted. Nothing in the chart changes.
+          <strong style={sectionLabel}>Critical Follow-up</strong> &mdash; not a discharge. The patient is still admitted; nothing changes.
         </li>
       </ul>
       <p style={paragraph}>
-        Until a departure is reconciled, Wake flags that the chart still lists the patient as active &mdash; so the capture list doubles as a checklist of what the EMR has not caught up on yet.
+        Until a departure is reconciled, Wake flags the patient as still active in the chart &mdash; so the capture list doubles as a checklist of what the EMR has not caught up on.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Integration.</strong> Wake runs against the 18 synthetic patients in the Keel EMR. The morning handoff is generated from the shift&apos;s captured events; the reconciliations write through the same canonical path the chart&apos;s own controls use, so the worklist, the morning assignment list, and the discharged view stop disagreeing about who is still on service. Generated sign-outs appear on the Keel activity log.
+        <strong style={sectionLabel}>Integration.</strong> Wake runs against the 18 synthetic patients in Keel. Reconciliations write through the same path the chart&apos;s own controls use, so the worklist, the morning assignment list, and the discharged view stop disagreeing about who is still on service. Generated sign-outs appear on the Keel activity log.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Status.</strong> Live. Deployed against the 18 synthetic patients in Keel, with one illustrative overnight shift recorded across all six categories.
+        <strong style={sectionLabel}>Status.</strong> Live. Deployed against the 18 synthetic patients, with one overnight shift recorded across all six categories.
       </p>
 
       <div style={buttonRow}>
