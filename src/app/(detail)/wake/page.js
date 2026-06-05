@@ -37,22 +37,6 @@ const buttonStyle = {
   padding: '12px 22px',
 };
 
-const secondaryRow = {
-  textAlign: 'center',
-  marginTop: 0,
-  marginBottom: '1.25rem',
-};
-
-const secondaryLinkStyle = {
-  fontFamily: '"Inter", -apple-system, sans-serif',
-  fontSize: '0.8125rem',
-  letterSpacing: '0.02em',
-  color: '#8a8a8a',
-  textDecoration: 'none',
-  borderBottom: '1px solid #d8d2c5',
-  paddingBottom: '1px',
-};
-
 const statusLine = {
   fontFamily: '"Inter", -apple-system, sans-serif',
   fontSize: '0.75rem',
@@ -103,7 +87,7 @@ export default function Wake() {
         The one thing the chart cannot otherwise carry is an open loop on a patient who is already gone. Wake stores exactly that: a follow-up thread &mdash; a note and a status (open, reached, unable to reach, handed off) on an already-discharged patient &mdash; opened by the night clinician and closed by whoever resolves it. It is the only clinical content Wake originates from nothing. The shift boundary and the optional departure note are its only other writes, and none of them touch the chart.
       </p>
       <p style={paragraph}>
-        <strong style={sectionLabel}>Generate and lock.</strong> At the end of the night, one action generates the morning sheet: it runs the assignment algorithm and freezes the overnight section &mdash; departures and open follow-ups &mdash; into a single working draft. The clinician reviews it, adjusts an assignment if someone is sicker than the load model knows, then locks it. Locking stamps the sheet with the time and the author and makes it read-only; the lock is the handoff. The day team reads the locked sheet and picks up patients as they assume care. The structured sheet is the handoff. A language model can, on request, render it into prose, but it is never on the path: it writes language only, invents no fact, and the sheet is complete without it.
+        <strong style={sectionLabel}>Generate and lock.</strong> At the end of the night, the clinician ends the shift &mdash; and that one act produces the morning sheet: it runs the assignment algorithm and freezes the overnight section &mdash; departures and open follow-ups &mdash; into a single working draft. The clinician reviews it, adjusts an assignment if someone is sicker than the load model knows, then locks it. Locking stamps the sheet with the time and the author and makes it read-only; the lock is the handoff. The day team reads the locked sheet and picks up patients as they assume care. The structured sheet is the handoff. A language model can, on request, render it into prose, but it is never on the path: it writes language only, invents no fact, and the sheet is complete without it.
       </p>
       <p style={paragraph}>
         <strong style={sectionLabel}>Integration.</strong> Wake runs against the synthetic patients in Keel and shares its chart with the morning assignment room. Because departures are read from the same discharge events the worklist and the discharged view already use, the three never disagree about who is on service: a patient who left is absent from the assignments, present in the overnight section, and on the discharged list &mdash; one fact, three views. The assignments account for who is here; the overnight layer accounts for everyone who is not.
@@ -122,17 +106,6 @@ export default function Wake() {
           Open Wake in Keel &rarr;
         </a>
       </div>
-      <div style={secondaryRow}>
-        <a
-          href="https://ghost-signout.vercel.app/capture"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={secondaryLinkStyle}
-        >
-          The original prototype, Ghost Signout &rarr;
-        </a>
-      </div>
-
       <div style={statusLine}>01 &middot; Live</div>
 
       <BackLink />
