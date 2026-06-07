@@ -24,13 +24,13 @@ export default function About() {
         color: '#3a3a3a',
       }}>
         <p style={{ margin: '0 0 1rem 0' }}>
-          Board certified internist and hospitalist with an active part-time clinical practice. US/Swedish dual citizen, based in Karlstad. Trained in biomedical engineering before medicine.
+          Board certified internist and hospitalist with an active part-time clinical practice in the US. US/Swedish dual citizen, trained in biomedical engineering before medicine.
         </p>
         <p style={{ margin: '0 0 1rem 0' }}>
-          My daily work is inpatient hospital medicine: admissions, cross cover, ICU co management, the full arc of an acute care stay.
+          My daily work is inpatient hospital medicine: admissions, cross cover, ICU co management, point of care ultrasound, the full arc of an acute care stay.
         </p>
         <p style={{ margin: 0 }}>
-          floviken.se is where I build small experiments at the intersection of medicine, AI, and bioengineering. The tools have reached a point where a physician can take an idea, write the code, put coding agents to work, and build a working experiment, whether that&apos;s an EMR workflow or a simulator for red blood cell metabolism. It&apos;s a fascinating space, and I&apos;m having a lot of fun in it. Personal work on personal time, nothing deployed, views my own.
+          Floviken.se is where I build experiments at the intersection of medicine, AI, and bioengineering. The tools have reached a point where a physician can take an idea, write the code, put coding agents to work, and build a working experiment, whether that&apos;s an EMR workflow or a simulator for red blood cell metabolism. It&apos;s a fascinating space, and I&apos;m having a lot of fun in it. Personal work on personal time, not used in patient care, views my own.
         </p>
       </div>
 
