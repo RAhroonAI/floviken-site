@@ -209,6 +209,28 @@ export const tiles = {
     `,
   },
 
+  reserve: {
+    name: "Reserve",
+    oneLiner: "The same oxidant drug — cleared by one red cell, fatal to another.",
+    tag: "09 · IN PROGRESS",
+    verb: "The same drug, a different outcome.",
+    sub: "A red cell spending its reserve.",
+    href: "/reserve",
+    external: false,
+    bg: "#2a1416",
+    color: "#e8cfca",
+    tagColor: "#c98f88",
+    subColor: "#c98f88",
+    glyph: `
+      <ellipse cx="172" cy="200" rx="112" ry="112" fill="#7a1f2b" opacity="0.22"/>
+      <ellipse cx="172" cy="200" rx="112" ry="112" fill="none" stroke="#d8786a" stroke-width="2" opacity="0.6"/>
+      <ellipse cx="172" cy="200" rx="48" ry="36" fill="#2a1416"/>
+      <ellipse cx="172" cy="200" rx="48" ry="36" fill="none" stroke="#d8786a" stroke-width="1.4" opacity="0.5"/>
+      <rect x="300" y="128" width="28" height="144" rx="6" fill="none" stroke="#d8786a" stroke-width="2" opacity="0.5"/>
+      <rect x="305" y="208" width="18" height="59" rx="4" fill="#d8786a" opacity="0.55"/>
+    `,
+  },
+
   signal: {
     name: "Send a signal",
     oneLiner: "Working on something nearby? Let’s talk.",

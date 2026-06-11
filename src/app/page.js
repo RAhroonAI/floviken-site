@@ -288,6 +288,27 @@ export default function Home() {
           <div style={{ ...statusBase, color: '#4A5448' }}>Position</div>
         </a>
 
+        <a className="tile" href="/reserve" style={{ ...tileBase, background: '#2a1416' }}>
+          <div style={artBase}>
+            <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+              <ellipse cx="86" cy="100" rx="56" ry="56" fill="#7a1f2b" opacity="0.25" />
+              <ellipse cx="86" cy="100" rx="56" ry="56" fill="none" stroke="#d8786a" strokeWidth="1.4" opacity="0.6" />
+              <ellipse cx="86" cy="100" rx="24" ry="18" fill="#2a1416" />
+              <ellipse cx="86" cy="100" rx="24" ry="18" fill="none" stroke="#d8786a" strokeWidth="1" opacity="0.45" />
+              <rect x="150" y="64" width="14" height="72" rx="3" fill="none" stroke="#d8786a" strokeWidth="1.2" opacity="0.5" />
+              <rect x="152" y="104" width="10" height="30" rx="2" fill="#d8786a" opacity="0.55" />
+            </svg>
+          </div>
+          <div style={{ ...innerBase, color: '#e8cfca' }}>
+            <div>
+              <div style={tagStyle}>09</div>
+              <div style={nameStyle}>Reserve</div>
+            </div>
+            <div style={lineStyle}>The same drug, a different outcome.</div>
+          </div>
+          <div style={{ ...statusBase, color: '#c98f88' }}>In progress</div>
+        </a>
+
         <a className="tile" href="/signal" style={{ ...tileBase, background: '#14323A' }}>
           <div style={artBase}>
             <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
