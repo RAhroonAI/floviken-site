@@ -1,6 +1,7 @@
 import { tileMetadata } from "@/app/_components/tile-data";
 import { BackLink } from "@/app/_components/ActionTile";
 import { ReserveSimulator } from "@/components/reserve/ReserveSimulator";
+import Link from "next/link";
 
 export const metadata = tileMetadata("reserve");
 
@@ -117,6 +118,23 @@ export default function Reserve() {
 
       <div style={{ marginTop: "2.25rem", marginBottom: "0.5rem" }}>
         <ReserveSimulator />
+      </div>
+
+      <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
+        <Link
+          href="/reserve/compare"
+          style={{
+            fontFamily: '"Inter", -apple-system, sans-serif',
+            fontSize: "0.8125rem",
+            letterSpacing: "0.02em",
+            color: "#7a1f2b",
+            textDecoration: "none",
+            borderBottom: "1px solid #e0c6c0",
+            paddingBottom: "1px",
+          }}
+        >
+          See the threshold window &rarr;
+        </Link>
       </div>
 
       <div style={statusLine}>09 &middot; In progress</div>
