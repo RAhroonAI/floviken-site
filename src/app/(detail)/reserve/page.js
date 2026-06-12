@@ -54,6 +54,24 @@ export default function Reserve() {
       </h1>
 
       <p style={paragraph}>
+        Some people carry a genetic quirk that makes an ordinary medication
+        dangerous for them &mdash; a drug most patients shrug off can, in them,
+        destroy red blood cells. The same dose, a different outcome. Reserve is a
+        working simulation of why that happens. You give a red blood cell that
+        genetic weakness, expose it to a drug, and watch whether it copes or
+        comes apart &mdash; and you can see, step by step, exactly where and why
+        it fails.
+      </p>
+
+      <p style={paragraph}>
+        The short version: a red blood cell keeps a chemical &ldquo;reserve&rdquo;
+        on hand to defend itself. A healthy cell tops that reserve back up as fast
+        as it&apos;s spent. A cell with this genetic weakness can&apos;t refill
+        fast enough &mdash; so under enough stress, the reserve runs dry and the
+        cell fails. Everything below is how that&apos;s modeled.
+      </p>
+
+      <p style={paragraph}>
         <strong style={sectionLabel}>Background.</strong> A red blood cell spends
         its whole life holding one variable steady: its redox state. Oxidants keep
         arriving &mdash; from the oxygen it carries, from infections, from drugs
