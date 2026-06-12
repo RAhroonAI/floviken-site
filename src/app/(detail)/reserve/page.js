@@ -1,6 +1,7 @@
 import { tileMetadata } from "@/app/_components/tile-data";
 import { BackLink } from "@/app/_components/ActionTile";
 import { ReserveSimulator } from "@/components/reserve/ReserveSimulator";
+import { ReserveLoopDiagram } from "@/components/reserve/ReserveLoopDiagram";
 import Link from "next/link";
 
 export const metadata = tileMetadata("reserve");
@@ -115,6 +116,8 @@ export default function Reserve() {
         loop &mdash; not a clinical instrument, and nothing here is a patient
         prediction.
       </p>
+
+      <ReserveLoopDiagram />
 
       <div style={{ marginTop: "2.25rem", marginBottom: "0.5rem" }}>
         <ReserveSimulator />
