@@ -1,6 +1,5 @@
 import { tileMetadata } from "@/app/_components/tile-data";
 import { BackLink } from "@/app/_components/ActionTile";
-import { ReserveSimulator } from "@/components/reserve/ReserveSimulator";
 import { ReserveLoopDiagram } from "@/components/reserve/ReserveLoopDiagram";
 import Link from "next/link";
 
@@ -99,13 +98,12 @@ export default function Reserve() {
       </p>
 
       <p style={paragraph}>
-        <strong style={sectionLabel}>Integration.</strong> The simulator below
+        <strong style={sectionLabel}>Integration.</strong> The interactive page
         runs that engine in your browser &mdash; the same code, no server, no
-        recorded video. Pick a genotype to set the loop gain, set an oxidant
-        challenge, and watch the four reserves drain and either recover or give
-        out. It opens on a severe G6PD cell under a moderate oxidant, which tips
-        into failure on its own; switch to a healthy cell and the same
-        disturbance is absorbed.
+        recorded video. Compare a healthy cell with a real documented patient
+        under one shared oxidant, or drive a single cell: pick a genotype to set
+        the loop gain, set an oxidant challenge, and watch the four reserves drain
+        and either recover or give out.
       </p>
 
       <p style={paragraph}>
@@ -119,24 +117,22 @@ export default function Reserve() {
 
       <ReserveLoopDiagram />
 
-      <div style={{ marginTop: "2.25rem", marginBottom: "0.5rem" }}>
-        <ReserveSimulator />
-      </div>
-
-      <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
+      <div style={{ textAlign: "center", marginTop: "2.5rem", marginBottom: "0.5rem" }}>
         <Link
-          href="/reserve/compare"
+          href="/reserve/run"
           style={{
+            display: "inline-block",
             fontFamily: '"Inter", -apple-system, sans-serif',
-            fontSize: "0.8125rem",
-            letterSpacing: "0.02em",
+            fontSize: "0.9375rem",
+            letterSpacing: "0.03em",
             color: "#7a1f2b",
             textDecoration: "none",
-            borderBottom: "1px solid #e0c6c0",
-            paddingBottom: "1px",
+            border: "1px solid #7a1f2b",
+            borderRadius: "4px",
+            padding: "12px 26px",
           }}
         >
-          See the threshold window &rarr;
+          Run the experiment &rarr;
         </Link>
       </div>
 

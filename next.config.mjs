@@ -12,6 +12,14 @@ const nextConfig = {
         destination: "/wake",
         permanent: true,
       },
+      // Reserve was restructured: the single-cell simulator and the side-by-side
+      // comparison now live on ONE toggled page at /reserve/run. The old
+      // standalone comparison route is retired; keep its URL working. (308)
+      {
+        source: "/reserve/compare",
+        destination: "/reserve/run",
+        permanent: true,
+      },
     ];
   },
 };
