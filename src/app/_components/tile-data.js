@@ -211,7 +211,10 @@ export const tiles = {
 
   reserve: {
     name: "Reserve",
-    oneLiner: "The same oxidant drug — cleared by one red cell, fatal to another.",
+    // Reserve-only browser-tab title override (de-dashed). Other rooms have no
+    // title field, so they fall back to the shared default title, unchanged.
+    title: "Reserve: Floviken",
+    oneLiner: "The same oxidant drug: cleared by one red cell, fatal to another.",
     tag: "09 · IN PROGRESS",
     verb: "The same drug, a different outcome.",
     sub: "A red cell spending its reserve.",
@@ -267,7 +270,7 @@ export function tileMetadata(slug, overrides = {}) {
   if (!t) return null;
   const url = `https://floviken.se/${slug}`;
   const ogImage = `https://floviken.se/og/${slug}.png`;
-  const title = overrides.title || `${t.name} — Floviken`;
+  const title = overrides.title || t.title || `${t.name} — Floviken`;
   const description = overrides.description || t.oneLiner;
   return {
     title,
