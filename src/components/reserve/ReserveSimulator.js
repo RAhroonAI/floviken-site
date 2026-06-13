@@ -27,7 +27,6 @@ import { simulate } from "@/lib/reserve/engine.mjs";
 import {
   HEALTHY,
   G6PD_SEVERE,
-  PK_DEFICIENCY,
   RESTING,
   NADPH_CRIT,
   HEMOLYSIS_THRESHOLD,
@@ -59,11 +58,12 @@ const GAUGE_COLOR = {
   bpg: "#7F77DD",
 };
 
-// --- genotypes: EXACTLY the three that exist in params.mjs ------------------
-// Labels are faithful to the engine's own comments. The severe set is "≈4%
-// activity (WHO class I/II)"; params.mjs explicitly notes 4% is a representative
-// severe value, not a named variant — so the label says "severe", not
-// "Mediterranean", to avoid claiming a variant the engine does not model.
+// --- genotypes surfaced in the UI: Healthy and G6PD-severe only -------------
+// params.mjs also defines a pyruvate-kinase set, but PK deficiency is an
+// energy-failure problem, not an oxidant or drug-sensitivity one, so it is left
+// out of this drug-gene room. The engine keeps it; it is just not selectable.
+// The severe set is a representative ~4% activity (WHO class I/II), not a named
+// variant, so the label says "severe" rather than naming a specific variant.
 const GENOTYPES = [
   { key: "healthy", label: "Healthy", note: "full enzyme activity", genotype: HEALTHY },
   {
@@ -71,12 +71,6 @@ const GENOTYPES = [
     label: "G6PD — severe",
     note: "≈4% activity · WHO class I/II",
     genotype: G6PD_SEVERE,
-  },
-  {
-    key: "pk",
-    label: "Pyruvate kinase",
-    note: "≈25% activity",
-    genotype: PK_DEFICIENCY,
   },
 ];
 
