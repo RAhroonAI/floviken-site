@@ -91,9 +91,7 @@ const OX_ON = 6;
 // "damaged past recovery". A surviving cell instead settles at a depressed but
 // stable level and holds it: the loop rejecting a continuous disturbance.
 const OX_OFF = 220;
-const OX_MAX = 1.5;
-const OX_STEP = 0.05;
-const OX_DEFAULT = 0.6;
+const OX_DEFAULT = 0.6; // fallback when no drug-driven level is supplied
 const DEFAULT_GENO = "g6pd";
 const ANIM_MS = 4000;
 
@@ -165,12 +163,13 @@ function runEngine(genoKey, level) {
   });
 }
 
-export function ReserveSimulator() {
+export function ReserveSimulator({ oxidantLevel = OX_DEFAULT }) {
   const [genoKey, setGenoKey] = useState(DEFAULT_GENO);
-  const [level, setLevel] = useState(OX_DEFAULT);
+  // The oxidant level is driven by the shared drug menu on the page (passed as a
+  // prop), not an internal slider.
   // Compute the default run synchronously so the first paint already has the
   // resting frame — no null flash, no layout shift on hydrate.
-  const [result, setResult] = useState(() => runEngine(DEFAULT_GENO, OX_DEFAULT));
+  const [result, setResult] = useState(() => runEngine(DEFAULT_GENO, oxidantLevel));
   const [frame, setFrame] = useState(0);
   const [running, setRunning] = useState(false);
 
@@ -236,45 +235,32 @@ export function ReserveSimulator() {
     [cancelAnim],
   );
 
-  // Static preview (no animation) — used for live slider scrubbing so dragging
-  // the slider doesn't restart the 4s animation on every input event.
-  const preview = useCallback(
-    (gk, lvl) => {
-      cancelAnim();
-      const res = runEngine(gk, lvl);
-      setResult(res);
-      setFrame(res.trajectory.length - 1);
-      setRunning(false);
-    },
-    [cancelAnim],
-  );
-
-  // Auto-run the default (severe + moderate) on mount: a visitor who touches
-  // nothing still watches the cell tip into failure. The kickoff is deferred to
-  // the next frame so no state is set synchronously inside the effect body (the
-  // first paint already shows the resting frame from the useState initializer).
+  // Keep the latest genotype in a ref so the oxidant effect can run at it
+  // without re-firing on a genotype change (that path is handled imperatively).
+  const genoRef = useRef(genoKey);
   useEffect(() => {
-    const id = requestAnimationFrame(() => play(DEFAULT_GENO, OX_DEFAULT));
+    genoRef.current = genoKey;
+  }, [genoKey]);
+
+  // Auto-run on mount AND whenever the drug-driven oxidant level changes — runs
+  // at the current genotype. Deferred a frame so no setState runs synchronously
+  // in the effect body (the first paint already shows the resting frame).
+  useEffect(() => {
+    const id = requestAnimationFrame(() => play(genoRef.current, oxidantLevel));
     return () => {
       cancelAnimationFrame(id);
       cancelAnim();
     };
-  }, [play, cancelAnim]);
+  }, [oxidantLevel, play, cancelAnim]);
 
   const onSelectGenotype = (gk) => {
     setGenoKey(gk);
-    play(gk, level);
+    play(gk, oxidantLevel);
   };
-  const onSliderInput = (v) => {
-    setLevel(v);
-    preview(genoKey, v); // live static feedback while dragging
-  };
-  const onSliderCommit = () => play(genoKey, level);
-  const onRun = () => play(genoKey, level);
+  const onRun = () => play(genoKey, oxidantLevel);
   const onReset = () => {
     setGenoKey(DEFAULT_GENO);
-    setLevel(OX_DEFAULT);
-    play(DEFAULT_GENO, OX_DEFAULT);
+    play(DEFAULT_GENO, oxidantLevel);
   };
 
   // Downsampled plot coordinates for each series, recomputed per run.
@@ -310,7 +296,7 @@ export function ReserveSimulator() {
 
   const genoLabel = GENOTYPES.find((g) => g.key === genoKey).label;
   const srSummary =
-    `Reserve simulator. Genotype ${genoLabel}, oxidant challenge ${oxWord(level)}. ` +
+    `Reserve simulator. Genotype ${genoLabel}, oxidant challenge ${oxWord(oxidantLevel)}. ` +
     `Outcome: ${VERDICT_COPY[verdict]} ` +
     GAUGES.map(
       (g) =>
@@ -386,37 +372,6 @@ export function ReserveSimulator() {
               </button>
             );
           })}
-        </div>
-      </div>
-
-      <div style={{ marginBottom: "24px", maxWidth: "440px" }}>
-        <Label>Oxidant challenge — the disturbance</Label>
-        <div style={{ display: "flex", alignItems: "center", gap: "14px", marginTop: "8px" }}>
-          <input
-            type="range"
-            min={0}
-            max={OX_MAX}
-            step={OX_STEP}
-            value={level}
-            aria-label="Oxidant challenge level"
-            aria-valuetext={`${oxWord(level)} (${level.toFixed(2)})`}
-            onChange={(e) => onSliderInput(parseFloat(e.target.value))}
-            onPointerUp={onSliderCommit}
-            onKeyUp={onSliderCommit}
-            style={{ flex: 1, accentColor: C.accent, cursor: "pointer" }}
-          />
-          <span
-            style={{
-              minWidth: "76px",
-              textAlign: "right",
-              fontSize: "13px",
-              fontWeight: 500,
-              color: C.body,
-              fontVariantNumeric: "tabular-nums",
-            }}
-          >
-            {oxWord(level)}
-          </span>
         </div>
       </div>
 
