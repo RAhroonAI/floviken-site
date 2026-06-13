@@ -195,7 +195,7 @@ export function ReserveRun() {
           borderLeft: `3px solid ${C.accent}`,
           borderRadius: "0 6px 6px 0",
           padding: "10px 14px",
-          margin: "0 0 22px",
+          margin: "0 0 8px",
           maxWidth: "640px",
         }}
       >
@@ -203,6 +203,21 @@ export function ReserveRun() {
         their risk tiers are real (CPIC; Youngster et al. 2010). How hard each one
         pushes this cell is illustrative &mdash; a qualitative stress level by risk
         tier, not a dose or a prediction. Not a clinical tool.
+      </p>
+
+      {/* within-tier caveat: same tier == same modeled stress level */}
+      <p
+        style={{
+          fontFamily: SANS,
+          fontSize: "0.75rem",
+          lineHeight: 1.5,
+          color: C.muted,
+          margin: "0 0 22px",
+          maxWidth: "640px",
+        }}
+      >
+        Drugs within the same risk tier are modeled at the same stress level
+        &mdash; the model doesn&apos;t distinguish between them.
       </p>
 
       {view === "compare" ? (
