@@ -3,12 +3,12 @@ import { ReserveRun } from "@/components/reserve/ReserveRun";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Reserve — run the experiment · Floviken",
+  title: "Reserve: run the experiment · Floviken",
   description:
     "Run the Reserve red-blood-cell simulation: compare a healthy cell with a real documented G6PD-deficient patient under the same oxidant, or drive a single cell yourself. Floviken lab, Experiment 09.",
   alternates: { canonical: "https://floviken.se/reserve/run" },
   openGraph: {
-    title: "Reserve — run the experiment · Floviken",
+    title: "Reserve: run the experiment · Floviken",
     description:
       "Compare a healthy cell with a real G6PD-deficient patient under the same oxidant, or drive a single cell yourself.",
     url: "https://floviken.se/reserve/run",
@@ -18,7 +18,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reserve — run the experiment · Floviken",
+    title: "Reserve: run the experiment · Floviken",
     description:
       "Compare a healthy cell with a real G6PD-deficient patient under the same oxidant, or drive a single cell yourself.",
     images: ["https://floviken.se/og/reserve.png"],
@@ -76,23 +76,10 @@ export default function ReserveRunPage() {
         lineHeight: 1.7,
         color: "#4a4a4a",
         marginTop: 0,
-        marginBottom: "1rem",
-      }}>
-        One example of pharmacogenomics: how a person&apos;s genes shape which
-        drugs are safe for them.
-      </p>
-
-      <p style={{
-        fontFamily: '"Georgia", serif',
-        fontSize: "1rem",
-        lineHeight: 1.7,
-        color: "#4a4a4a",
-        marginTop: 0,
         marginBottom: "1.75rem",
       }}>
-        The same engine described in the write-up, running in your browser. Compare
-        a healthy cell with a real documented patient under one shared oxidant, or
-        switch to a single cell and pick the genotype yourself.
+        Compare a healthy cell with a real documented patient under one shared
+        drug, or switch to a single cell and pick the genotype yourself.
       </p>
 
       <ReserveRun />
