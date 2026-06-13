@@ -55,6 +55,13 @@ export default function Reserve() {
       </h1>
 
       <p style={paragraph}>
+        This is one clean example of a broader principle. Pharmacogenomics is the
+        idea that a person&apos;s genetics shape which drugs help them and which
+        cause harm. Reserve takes a single, well-understood case and makes it
+        something you can watch.
+      </p>
+
+      <p style={paragraph}>
         <strong style={sectionLabel}>Background.</strong> A red blood cell spends
         its whole life holding one variable steady: its redox state. Oxidants keep
         arriving &mdash; from the oxygen it carries, from infections, from drugs
@@ -80,6 +87,20 @@ export default function Reserve() {
         and the cell tips into hemolysis. Severity should be a property of the
         loop, not an entry in a lookup table. The deficiency stays silent until
         the day it is challenged.
+      </p>
+
+      <p style={paragraph}>
+        <strong style={sectionLabel}>How it&apos;s modeled.</strong> Each key
+        substance in the cell gets an equation describing how fast it rises and
+        falls. The computer steps them forward in time, so you watch the cell
+        behave as it would in motion, not as a snapshot. The G6PD step uses
+        kinetics from published patient data; the surrounding chemistry is
+        simplified, enough to show the behavior honestly, not enough to be a
+        complete model of the cell. On top of that, the cell is treated as a
+        control system: a reserve it holds steady, a stress that spends it, a loop
+        that refills it. The genetic deficiency is a weak point in that loop,
+        where the refill cannot keep pace. That reframes vulnerability as a
+        property of the loop rather than a fact to memorize.
       </p>
 
       <p style={paragraph}>
@@ -113,6 +134,17 @@ export default function Reserve() {
         against the full published model. A reasoning tool for thinking about the
         loop &mdash; not a clinical instrument, and nothing here is a patient
         prediction.
+      </p>
+
+      <p style={paragraph}>
+        <strong style={sectionLabel}>Why this matters.</strong> Matching drugs to
+        a person&apos;s genetics is already changing how some medicines are
+        prescribed, and G6PD deficiency is one of the clearest cases. A single
+        inherited variant flips an ordinary drug from safe to dangerous. Reserve
+        models just this one pathway, qualitatively, as a way to see the principle
+        at work. Predicting drug safety from a whole genome is a vast, validated,
+        regulated field. This is the small case example that makes the idea
+        tangible, not a tool for any decision about a real person.
       </p>
 
       <ReserveLoopDiagram />

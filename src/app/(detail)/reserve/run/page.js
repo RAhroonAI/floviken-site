@@ -76,6 +76,18 @@ export default function ReserveRunPage() {
         lineHeight: 1.7,
         color: "#4a4a4a",
         marginTop: 0,
+        marginBottom: "1rem",
+      }}>
+        One example of pharmacogenomics: how a person&apos;s genes shape which
+        drugs are safe for them.
+      </p>
+
+      <p style={{
+        fontFamily: '"Georgia", serif',
+        fontSize: "1rem",
+        lineHeight: 1.7,
+        color: "#4a4a4a",
+        marginTop: 0,
         marginBottom: "1.75rem",
       }}>
         The same engine described in the write-up, running in your browser. Compare
