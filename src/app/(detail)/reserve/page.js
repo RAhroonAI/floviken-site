@@ -55,9 +55,9 @@ export default function Reserve() {
       </h1>
 
       <p style={paragraph}>
-        Pharmacogenomics is the principle that a person&apos;s genetics shape
-        which drugs help them and which cause harm. Reserve models one
-        well-understood case: G6PD deficiency.
+        Pharmacogenetics is the principle that a person&apos;s genes shape which
+        drugs help them and which cause harm. Reserve models one well-understood
+        case: G6PD deficiency.
       </p>
 
       <p style={paragraph}>
@@ -130,8 +130,7 @@ export default function Reserve() {
         and this room are built and the model is deterministic, but the
         surrounding network and the absolute scales are still illustrative, not
         yet grounded against the full published model. A reasoning tool for
-        thinking about the loop, not a clinical instrument, and nothing here is a
-        patient prediction.
+        thinking about the loop.
       </p>
 
       <p style={paragraph}>
@@ -167,6 +166,21 @@ export default function Reserve() {
       </div>
 
       <div style={statusLine}>09 &middot; In progress</div>
+
+      <p style={{
+        fontFamily: '"Inter", -apple-system, sans-serif',
+        fontSize: "0.75rem",
+        lineHeight: 1.6,
+        color: "#9a9a9a",
+        textAlign: "center",
+        maxWidth: "520px",
+        margin: "0 auto",
+      }}>
+        A personal, educational project, not affiliated with any employer or
+        institution. Reserve is a simplified educational model. It is not medical
+        advice, not a diagnostic or clinical tool, and not a guide to prescribing
+        for any real patient.
+      </p>
 
       <BackLink />
     </article>
