@@ -67,9 +67,7 @@ const DT = 0.1;
 const DURATION = 30; // the fork + crash complete by ~t15; a short tail follows
 const OX_ON = 6;
 const OX_OFF = 220; // sustained, as in the room
-const OX_MAX = 1.5;
-const OX_STEP = 0.05;
-const OX_DEFAULT = 0.45; // inside the window: patient fails, healthy holds
+const OX_DEFAULT = 0.45; // fallback when no drug-driven level is supplied
 const ANIM_MS = 5000;
 const BEAT_MS = 650; // a held beat at the point of divergence
 
@@ -88,31 +86,6 @@ function runCell(kinetics, level) {
     dt: DT,
   });
 }
-
-// The window edges are PROPERTIES OF THE ENGINE, derived once by scanning the
-// oxidant — not hardcoded. Lower edge = the lowest dose at which the patient's
-// cell hemolyzes. Upper edge = the lowest dose at which the healthy cell's
-// glutathione is drawn below half (it starts to strain; it does not hemolyze in
-// range). Deterministic, so SSR and client agree.
-function computeWindow() {
-  let patientThreshold = null;
-  let healthyStrain = null;
-  for (let i = 0; i <= Math.round(OX_MAX / OX_STEP); i++) {
-    const lvl = i * OX_STEP;
-    if (patientThreshold === null && runCell(PATIENT_KIN, lvl).metrics.hemolyzed) {
-      patientThreshold = lvl;
-    }
-    if (healthyStrain === null && runCell(HEALTHY_KIN, lvl).metrics.minGsh < 0.5) {
-      healthyStrain = lvl;
-    }
-    if (patientThreshold !== null && healthyStrain !== null) break;
-  }
-  return {
-    patientThreshold: patientThreshold == null ? 0 : patientThreshold,
-    healthyStrain: healthyStrain == null ? OX_MAX : healthyStrain,
-  };
-}
-const WINDOW = computeWindow();
 
 // Verdict from real engine metrics only (same definition as the room).
 function verdictOf(m) {
@@ -189,10 +162,11 @@ function findFork(resH, resD) {
   return null;
 }
 
-export function ReserveCompare() {
-  const [level, setLevel] = useState(OX_DEFAULT);
-  const [resH, setResH] = useState(() => runCell(HEALTHY_KIN, OX_DEFAULT));
-  const [resD, setResD] = useState(() => runCell(PATIENT_KIN, OX_DEFAULT));
+export function ReserveCompare({ oxidantLevel = OX_DEFAULT }) {
+  // The oxidant level is driven by the shared drug menu on the page (a prop),
+  // not an internal slider.
+  const [resH, setResH] = useState(() => runCell(HEALTHY_KIN, oxidantLevel));
+  const [resD, setResD] = useState(() => runCell(PATIENT_KIN, oxidantLevel));
   const [frame, setFrame] = useState(0);
   const [running, setRunning] = useState(false);
   const rafRef = useRef(null);
@@ -282,52 +256,17 @@ export function ReserveCompare() {
     [cancelAnim],
   );
 
-  const preview = useCallback(
-    (lvl) => {
-      cancelAnim();
-      const rH = runCell(HEALTHY_KIN, lvl);
-      const rD = runCell(PATIENT_KIN, lvl);
-      setResH(rH);
-      setResD(rD);
-      setFrame(rH.trajectory.length - 1);
-      setRunning(false);
-    },
-    [cancelAnim],
-  );
-
-  // Auto-run the default on mount (deferred a frame so no setState runs
-  // synchronously in the effect body; first paint shows the resting frame).
+  // Auto-run on mount AND whenever the drug-driven oxidant level changes.
+  // Deferred a frame so no setState runs synchronously in the effect body.
   useEffect(() => {
-    const id = requestAnimationFrame(() => play(OX_DEFAULT));
+    const id = requestAnimationFrame(() => play(oxidantLevel));
     return () => {
       cancelAnimationFrame(id);
       cancelAnim();
     };
-  }, [play, cancelAnim]);
+  }, [oxidantLevel, play, cancelAnim]);
 
-  const onSliderInput = (v) => {
-    setLevel(v);
-    preview(v);
-  };
-  const onSliderCommit = () => play(level);
-  const onRun = () => play(level);
-  const onReset = () => {
-    setLevel(OX_DEFAULT);
-    play(OX_DEFAULT);
-  };
-
-  // Qualitative band on the slider (fractions of the range — no dose numbers).
-  const bandStart = clamp(WINDOW.patientThreshold / OX_MAX, 0, 1);
-  const bandEnd = clamp(WINDOW.healthyStrain / OX_MAX, 0, 1);
-
-  let doseNote;
-  if (level < WINDOW.patientThreshold) {
-    doseNote = "At this dose, both cells hold.";
-  } else if (level < WINDOW.healthyStrain) {
-    doseNote = "At this dose: safe for the healthy cell, dangerous for the patient.";
-  } else {
-    doseNote = "At this dose the healthy cell is straining too — but its reserve still holds.";
-  }
+  const onRun = () => play(oxidantLevel);
 
   // plot reference geometry
   const innerH = PLOT_H - 2 * PLOT_PAD;
@@ -342,7 +281,7 @@ export function ReserveCompare() {
   const srSummary =
     `Threshold-window comparison. A healthy cell and ${PATIENT_LABEL}, a real documented severe ` +
     `G6PD-deficient patient, under the same oxidant. Healthy outcome: ${VERDICT_COPY[vH]} ` +
-    `Patient outcome: ${VERDICT_COPY[vD]} ${doseNote}`;
+    `Patient outcome: ${VERDICT_COPY[vD]}`;
 
   return (
     <section aria-label="Reserve threshold-window comparison" style={{ fontFamily: SANS }}>
@@ -407,41 +346,6 @@ export function ReserveCompare() {
         </svg>
       </div>
 
-      {/* ---- shared oxidant slider + the window band ------------------- */}
-      <div style={{ marginTop: "20px", maxWidth: "560px" }}>
-        <Label>Oxidant challenge — one dose, applied to both cells</Label>
-        <div style={{ display: "flex", alignItems: "center", gap: "14px", marginTop: "8px" }}>
-          <div style={{ flex: 1, position: "relative" }}>
-            {/* qualitative window band behind the slider (no numbers) */}
-            <div aria-hidden="true" style={{ position: "absolute", top: "50%", left: 0, right: 0, height: "6px", transform: "translateY(-50%)", background: C.track, borderRadius: "3px" }}>
-              <div style={{ position: "absolute", top: 0, bottom: 0, left: `${bandStart * 100}%`, width: `${(bandEnd - bandStart) * 100}%`, background: "rgba(163, 45, 45, 0.18)", borderLeft: `2px solid ${C.danger}`, borderRight: `1px dashed ${C.warning}` }} />
-            </div>
-            <input
-              type="range"
-              min={0}
-              max={OX_MAX}
-              step={OX_STEP}
-              value={level}
-              aria-label="Oxidant challenge level, applied to both cells"
-              aria-valuetext={doseNote}
-              onChange={(e) => onSliderInput(parseFloat(e.target.value))}
-              onPointerUp={onSliderCommit}
-              onKeyUp={onSliderCommit}
-              style={{ position: "relative", width: "100%", accentColor: C.accent ?? C.danger, cursor: "pointer", background: "transparent" }}
-            />
-          </div>
-        </div>
-        <p style={{ fontSize: "12px", color: C.body, marginTop: "10px", marginBottom: 0, lineHeight: 1.5 }}>
-          {doseNote}
-        </p>
-        <p style={{ fontSize: "11px", color: C.muted, marginTop: "6px", marginBottom: 0, lineHeight: 1.5 }}>
-          The shaded band is the window: doses the healthy cell shrugs off, but
-          the patient&apos;s cell cannot. Raise the dose to find where the patient
-          tips, then keep going to where even the healthy cell begins to strain.
-          It is a phenomenon, not a measured dose — no milligrams here.
-        </p>
-      </div>
-
       {/* ---- the two cells (supporting) ------------------------------- */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "14px", marginTop: "20px" }}>
         <CellPanel
@@ -464,10 +368,9 @@ export function ReserveCompare() {
         />
       </div>
 
-      {/* ---- run / reset --------------------------------------------- */}
+      {/* ---- replay --------------------------------------------------- */}
       <div style={{ display: "flex", gap: "10px", marginTop: "18px" }}>
-        <button type="button" onClick={onRun} style={btnPrimary}>Run</button>
-        <button type="button" onClick={onReset} style={btnGhost}>Reset</button>
+        <button type="button" onClick={onRun} style={btnPrimary}>Run again</button>
       </div>
     </section>
   );
@@ -535,10 +438,6 @@ function LegendSwatch({ color, label }) {
   );
 }
 
-function Label({ children }) {
-  return <div style={{ fontSize: "12px", fontWeight: 500, color: C.body, letterSpacing: "0.01em" }}>{children}</div>;
-}
-
 const btnPrimary = {
   padding: "8px 18px",
   borderRadius: "6px",
@@ -548,16 +447,5 @@ const btnPrimary = {
   color: "#ffffff",
   fontSize: "13px",
   fontWeight: 500,
-  cursor: "pointer",
-};
-const btnGhost = {
-  padding: "8px 18px",
-  borderRadius: "6px",
-  fontFamily: SANS,
-  border: `0.5px solid ${C.rule}`,
-  background: C.surface,
-  color: C.body,
-  fontSize: "13px",
-  fontWeight: 400,
   cursor: "pointer",
 };
