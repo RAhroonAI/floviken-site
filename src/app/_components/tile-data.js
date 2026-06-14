@@ -215,7 +215,7 @@ export const tiles = {
     // title field, so they fall back to the shared default title, unchanged.
     title: "Reserve: Floviken",
     oneLiner: "The same oxidant drug: cleared by one red cell, fatal to another.",
-    tag: "09 · IN PROGRESS",
+    tag: "09 · LIVE",
     verb: "The same drug, a different outcome.",
     sub: "A red cell spending its reserve.",
     href: "/reserve",
