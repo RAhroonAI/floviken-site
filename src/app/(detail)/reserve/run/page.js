@@ -88,7 +88,7 @@ export default function ReserveRunPage() {
         <Link href="/reserve" style={roomLink}>&larr; Back to the Reserve write-up</Link>
       </div>
 
-      <div style={statusLine}>09 &middot; In progress</div>
+      <div style={statusLine}>09 &middot; Live</div>
 
       <BackLink />
     </article>

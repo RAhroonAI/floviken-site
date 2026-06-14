@@ -79,7 +79,7 @@ export function ReserveLoopDiagram() {
         <Pill cx={250} cy={130} w={112} node={NODES.g6pd} label="G6PD step" />
         <Pill cx={420} cy={130} w={96} node={NODES.nadph} label="NADPH" />
         <Pill cx={595} cy={130} w={122} node={NODES.gsh} label="glutathione" />
-        <Pill cx={595} cy={42} w={196} node={NODES.oxidant} label="oxidant hit — from a drug" />
+        <Pill cx={595} cy={42} w={196} node={NODES.oxidant} label="oxidant hit, from a drug" />
 
         {/* one tiny role hint on the broken step (kept minimal); placed above
             the node so it clears the refill arrow returning into it from below */}
@@ -98,8 +98,8 @@ export function ReserveLoopDiagram() {
           marginRight: "auto",
         }}
       >
-        The core protective loop. The real erythrocyte network is much larger
-        &mdash; this is the part the experiment turns on.
+        The core protective loop. The real erythrocyte network is much larger.
+        This is the part the experiment turns on.
       </figcaption>
     </figure>
   );

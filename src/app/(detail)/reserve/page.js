@@ -126,7 +126,7 @@ export default function Reserve() {
       </p>
 
       <p style={paragraph}>
-        <strong style={sectionLabel}>Status.</strong>{" "}In progress. The engine
+        <strong style={sectionLabel}>Status.</strong>{" "}Live. The engine
         and this room are built and the model is deterministic, but the
         surrounding network and the absolute scales are still illustrative, not
         yet grounded against the full published model. A reasoning tool for
@@ -165,7 +165,7 @@ export default function Reserve() {
         </Link>
       </div>
 
-      <div style={statusLine}>09 &middot; In progress</div>
+      <div style={statusLine}>09 &middot; Live</div>
 
       <p style={{
         fontFamily: '"Inter", -apple-system, sans-serif',
