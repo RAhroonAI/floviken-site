@@ -306,7 +306,7 @@ export default function Home() {
             </div>
             <div style={lineStyle}>The same drug, a different outcome.</div>
           </div>
-          <div style={{ ...statusBase, color: '#c98f88' }}>In progress</div>
+          <div style={{ ...statusBase, color: '#c98f88' }}>Live</div>
         </a>
 
         <a className="tile" href="/signal" style={{ ...tileBase, background: '#14323A' }}>
