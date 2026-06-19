@@ -1,5 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    return [
+      // Keep floviken.se out of search results without blocking access.
+      // X-Robots-Tag: noindex tells crawlers not to index any page; nofollow
+      // tells them not to follow links from it. The site stays fully live and
+      // reachable via direct links (e.g. from LinkedIn) — only search-engine
+      // indexing is suppressed. Applied to every route via '/:path*'.
+      // NOTE: deliberately NOT paired with a robots.txt Disallow — crawlers
+      // must be allowed to fetch the page to actually see this directive.
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // Experiment 01 was renamed Ghost Signout -> Wake. Keep the old writeup
